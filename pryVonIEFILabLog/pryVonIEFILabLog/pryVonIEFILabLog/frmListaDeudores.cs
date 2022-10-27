@@ -29,45 +29,53 @@ namespace pryVonIEFILabLog
 
         private void btnMostrar_Click(object sender, EventArgs e)
         {
-            grdListaDeudores.Rows.Clear();
-            totalDeuda = 0;
-            counterClientes = 0;
-
-            int id = 0;
-
-            OleDbConnection conexionDB;
-            conexionDB = new OleDbConnection(frmMenu.urlDB);
-            conexionDB.Open();
-
-            OleDbCommand comando = new OleDbCommand();
-            comando.Connection = conexionDB;
-            comando.CommandType = CommandType.TableDirect;
-            comando.CommandText = "SELECT * FROM CLIENTES";
-            OleDbDataReader reader = comando.ExecuteReader();
-
-            while (reader.Read())
+            try
             {
-                string deudaCliente = reader["Deuda"].ToString();
-                int dniCliente = int.Parse(reader["DNI"].ToString());
-                string nombreCliente = reader["Nombre y apellido"].ToString();
-                if (int.Parse(deudaCliente) > 0){
-                    grdListaDeudores.Rows.Add(dniCliente, nombreCliente, "$" + deudaCliente);
-                    totalDeuda += int.Parse(deudaCliente);
-                    counterClientes++;
+                grdListaDeudores.Rows.Clear();
+                totalDeuda = 0;
+                counterClientes = 0;
+
+                int id = 0;
+
+                OleDbConnection conexionDB;
+                conexionDB = new OleDbConnection(frmMenu.urlDB);
+                conexionDB.Open();
+
+                OleDbCommand comando = new OleDbCommand();
+                comando.Connection = conexionDB;
+                comando.CommandType = CommandType.TableDirect;
+                comando.CommandText = "SELECT * FROM CLIENTES";
+                OleDbDataReader reader = comando.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    string deudaCliente = reader["Deuda"].ToString();
+                    int dniCliente = int.Parse(reader["DNI"].ToString());
+                    string nombreCliente = reader["Nombre y apellido"].ToString();
+                    if (int.Parse(deudaCliente) > 0)
+                    {
+                        grdListaDeudores.Rows.Add(dniCliente, nombreCliente, "$" + deudaCliente);
+                        totalDeuda += int.Parse(deudaCliente);
+                        counterClientes++;
+                    }
                 }
+
+                reader.Close();
+                conexionDB.Close();
+
+                int promedio = totalDeuda / counterClientes;
+
+                lblTotalDeudaRes.Text = "$" + totalDeuda;
+                lblCantClientesRes.Text = counterClientes + " clientes";
+                lblPromDeudaRes.Text = "$" + promedio;
+
+                btnBorrar.Enabled = true;
+
             }
-
-            reader.Close();
-            conexionDB.Close();
-
-            int promedio = totalDeuda / counterClientes;
-
-            lblTotalDeudaRes.Text = "$" + totalDeuda;
-            lblCantClientesRes.Text = counterClientes + " clientes";
-            lblPromDeudaRes.Text = "$" + promedio;
-
-
-            btnBorrar.Enabled = true;
+            catch
+            {
+                MessageBox.Show("Error en el mostrado de los deudores");
+            }
         }
 
         private void btnBorrar_Click(object sender, EventArgs e)

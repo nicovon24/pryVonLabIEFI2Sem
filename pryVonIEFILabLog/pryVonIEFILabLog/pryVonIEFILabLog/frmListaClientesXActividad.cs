@@ -27,48 +27,57 @@ namespace pryVonIEFILabLog
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            //getting the id from actividad, bcs we want to search it then in clientes so we get the values dni and name
-            grdListaClientes.Rows.Clear();
-
-            int id = 0;
-
-            OleDbConnection conexionDB;
-            conexionDB = new OleDbConnection(frmMenu.urlDB);
-            conexionDB.Open();
-
-            OleDbCommand comandoActividades = new OleDbCommand();
-            comandoActividades.Connection = conexionDB;
-            comandoActividades.CommandType = CommandType.TableDirect;
-            comandoActividades.CommandText = "SELECT * FROM ACTIVIDADES";
-            OleDbDataReader readerActividades = comandoActividades.ExecuteReader();
-
-            while (readerActividades.Read())
+            try
             {
-                if (readerActividades["Detalle"].ToString() == cbActividad.Text)
+                //getting the id from actividad, bcs we want to search it then in clientes so we get the values dni and name
+                grdListaClientes.Rows.Clear();
+
+                int id = 0;
+
+                OleDbConnection conexionDB;
+                conexionDB = new OleDbConnection(frmMenu.urlDB);
+                conexionDB.Open();
+
+                OleDbCommand comandoActividades = new OleDbCommand();
+                comandoActividades.Connection = conexionDB;
+                comandoActividades.CommandType = CommandType.TableDirect;
+                comandoActividades.CommandText = "SELECT * FROM ACTIVIDADES";
+                OleDbDataReader readerActividades = comandoActividades.ExecuteReader();
+
+                while (readerActividades.Read())
                 {
-                    id = int.Parse(readerActividades["Cod_actividad"].ToString());
+                    if (readerActividades["Detalle"].ToString() == cbActividad.Text)
+                    {
+                        id = int.Parse(readerActividades["Cod_actividad"].ToString());
+                    }
                 }
+
+                //getting the data from the id actividad
+                OleDbCommand comandoClientes = new OleDbCommand();
+                comandoClientes.Connection = conexionDB;
+                comandoClientes.CommandType = CommandType.TableDirect;
+                comandoClientes.CommandText = "SELECT * FROM CLIENTES";
+                OleDbDataReader readerClientes = comandoClientes.ExecuteReader();
+
+                //getting the clients which practice that activity
+                while (readerClientes.Read())
+                {
+                    if (int.Parse(readerClientes["ID_actividad"].ToString()) == id)
+                    {
+                        grdListaClientes.Rows.Add(readerClientes["DNI"], readerClientes["Nombre y apellido"]);
+                    }
+                }
+
+                readerClientes.Close();
+                conexionDB.Close();
+
+                btnBorrar.Enabled = true;
             }
 
-            //getting the data from the id actividad
-            OleDbCommand comandoClientes= new OleDbCommand();
-            comandoClientes.Connection = conexionDB;
-            comandoClientes.CommandType = CommandType.TableDirect;
-            comandoClientes.CommandText = "SELECT * FROM CLIENTES";
-            OleDbDataReader readerClientes = comandoClientes.ExecuteReader();
-
-            while (readerClientes.Read())
+            catch
             {
-                if (int.Parse(readerClientes["ID_actividad"].ToString()) == id)
-                {
-                    grdListaClientes.Rows.Add(readerClientes["DNI"], readerClientes["Nombre y apellido"]);
-                }
+                MessageBox.Show("Error en el mostrado de datos de actividades");
             }
-
-            readerClientes.Close();
-            conexionDB.Close();
-
-            btnBorrar.Enabled = true;
         }
 
         private void btnBorrar_Click(object sender, EventArgs e)

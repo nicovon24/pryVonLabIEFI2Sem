@@ -43,16 +43,18 @@ namespace pryVonIEFILabLog
 
         private void btnAnadir_Click(object sender, EventArgs e)
         {
-            //getting the ids from these columns
+            try
+            {
+                //getting the ids from these columns
                 int cod_barrio = frmMenu.functTransformStringToID("Barrios", "Cod_barrio", "Detalle", cbBarrio.Text);
                 int cod_sucursal = frmMenu.functTransformStringToID("Sucursales", "Cod_sucursal", "Detalle", cbSucursal.Text);
                 int cod_profesor = frmMenu.functTransformStringToID("Profesores", "Cod_profesor", "Nombre", cbProfesor.Text);
                 int cod_actividad = frmMenu.functTransformStringToID("Actividades", "Cod_actividad", "Detalle", cbActividad.Text);
 
 
-            //sqlSentence for the program
-                string sqlTables = "DNI, [Nombre y apellido],  Sexo,  ID_barrio, ID_sucursal, ID_profesor, ID_actividad, Teléfono, Email, Deuda";
-                string sqlCommand = " " + txtDNI.Text + ", " + 
+                //sqlSentence for the program
+                string sqlTables = "DNI, [Nombre y apellido], Sexo, ID_barrio, ID_sucursal, ID_profesor, ID_actividad, Teléfono, Email, Deuda";
+                string sqlCommand = " " + txtDNI.Text + ", " +
                 "' " + txtNombre.Text + "', " +
                 "'" + cbSexo.Text + "', " +
                 cod_barrio + ", " +
@@ -74,6 +76,12 @@ namespace pryVonIEFILabLog
                 comando.ExecuteNonQuery();
                 MessageBox.Show("Dato cargado");
                 dbConnection.Close();
+            }
+
+            catch
+            {
+                MessageBox.Show("Error en el agregado de nuevos clientes");
+            }
             
         }
 

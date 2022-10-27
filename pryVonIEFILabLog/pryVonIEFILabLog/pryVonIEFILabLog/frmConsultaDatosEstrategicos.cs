@@ -45,7 +45,7 @@ namespace pryVonIEFILabLog
                 comandoClientes.CommandType = CommandType.TableDirect;
 
                 //codigo monotono, no pude hacerlo en función
-                //basicamente cuenta los valores de cada campo y los muestra en grilla
+                //basicamente segun el campo elegido en el combo box cuenta los valores de cada campo y los muestra en grilla
                 switch (cbOption)
                 {
                     case "Barrio":
@@ -163,7 +163,7 @@ namespace pryVonIEFILabLog
 
             catch
             {
-                MessageBox.Show("Error");
+                MessageBox.Show("Error en el mostrado de datos estratégicos");
             }
         }
 
