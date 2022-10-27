@@ -33,3 +33,18 @@ C:\Users\Nicolas\Downloads\Logica y lab iefi\pryVonIEFILabLog\pryVonIEFILabLog\p
 C:\Users\Nicolas\Downloads\Logica y lab iefi\pryVonIEFILabLog\pryVonIEFILabLog\pryVonIEFILabLog\obj\Debug\pryVonIEFILabLog.pdb
 C:\Users\Nicolas\Downloads\Logica y lab iefi\pryVonIEFILabLog\pryVonIEFILabLog\pryVonIEFILabLog\obj\Debug\pryVonIEFILabLog.frmAgregarNuevo.resources
 C:\Users\Nicolas\Downloads\Logica y lab iefi\pryVonIEFILabLog\pryVonIEFILabLog\pryVonIEFILabLog\obj\Debug\pryVonIEFILabLog.frmListaClientes.resources
+C:\Users\Alumno\Downloads\pryVonLabIEFI2Sem\pryVonIEFILabLog\pryVonIEFILabLog\pryVonIEFILabLog\bin\Debug\pryVonIEFILabLog.exe.config
+C:\Users\Alumno\Downloads\pryVonLabIEFI2Sem\pryVonIEFILabLog\pryVonIEFILabLog\pryVonIEFILabLog\bin\Debug\pryVonIEFILabLog.exe
+C:\Users\Alumno\Downloads\pryVonLabIEFI2Sem\pryVonIEFILabLog\pryVonIEFILabLog\pryVonIEFILabLog\bin\Debug\pryVonIEFILabLog.pdb
+C:\Users\Alumno\Downloads\pryVonLabIEFI2Sem\pryVonIEFILabLog\pryVonIEFILabLog\pryVonIEFILabLog\obj\Debug\pryVonIEFILabLog.csproj.AssemblyReference.cache
+C:\Users\Alumno\Downloads\pryVonLabIEFI2Sem\pryVonIEFILabLog\pryVonIEFILabLog\pryVonIEFILabLog\obj\Debug\pryVonIEFILabLog.csproj.SuggestedBindingRedirects.cache
+C:\Users\Alumno\Downloads\pryVonLabIEFI2Sem\pryVonIEFILabLog\pryVonIEFILabLog\pryVonIEFILabLog\obj\Debug\pryVonIEFILabLog.frmAgregarNuevo.resources
+C:\Users\Alumno\Downloads\pryVonLabIEFI2Sem\pryVonIEFILabLog\pryVonIEFILabLog\pryVonIEFILabLog\obj\Debug\pryVonIEFILabLog.frmMenu.resources
+C:\Users\Alumno\Downloads\pryVonLabIEFI2Sem\pryVonIEFILabLog\pryVonIEFILabLog\pryVonIEFILabLog\obj\Debug\pryVonIEFILabLog.Properties.Resources.resources
+C:\Users\Alumno\Downloads\pryVonLabIEFI2Sem\pryVonIEFILabLog\pryVonIEFILabLog\pryVonIEFILabLog\obj\Debug\pryVonIEFILabLog.csproj.GenerateResource.cache
+C:\Users\Alumno\Downloads\pryVonLabIEFI2Sem\pryVonIEFILabLog\pryVonIEFILabLog\pryVonIEFILabLog\obj\Debug\pryVonIEFILabLog.csproj.CoreCompileInputs.cache
+C:\Users\Alumno\Downloads\pryVonLabIEFI2Sem\pryVonIEFILabLog\pryVonIEFILabLog\pryVonIEFILabLog\obj\Debug\pryVonIEFILabLog.exe
+C:\Users\Alumno\Downloads\pryVonLabIEFI2Sem\pryVonIEFILabLog\pryVonIEFILabLog\pryVonIEFILabLog\obj\Debug\pryVonIEFILabLog.pdb
+C:\Users\Alumno\Downloads\pryVonLabIEFI2Sem\pryVonIEFILabLog\pryVonIEFILabLog\pryVonIEFILabLog\obj\Debug\pryVonIEFILabLog.frmListaDeudores.resources
+C:\Users\Alumno\Downloads\pryVonLabIEFI2Sem\pryVonIEFILabLog\pryVonIEFILabLog\pryVonIEFILabLog\obj\Debug\pryVonIEFILabLog.frmListaDatosClientes.resources
+C:\Users\Alumno\Downloads\pryVonLabIEFI2Sem\pryVonIEFILabLog\pryVonIEFILabLog\pryVonIEFILabLog\obj\Debug\pryVonIEFILabLog.frmListaActividad.resources

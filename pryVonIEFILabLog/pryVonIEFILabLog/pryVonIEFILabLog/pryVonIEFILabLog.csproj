@@ -52,11 +52,23 @@
     <Compile Include="frmAgregarNuevo.Designer.cs">
       <DependentUpon>frmAgregarNuevo.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmListaClientes.cs">
+    <Compile Include="frmListaDatosClientes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmListaClientes.Designer.cs">
-      <DependentUpon>frmListaClientes.cs</DependentUpon>
+    <Compile Include="frmListaDatosClientes.Designer.cs">
+      <DependentUpon>frmListaDatosClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmListaClientesXActividad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmListaClientesXActividad.Designer.cs">
+      <DependentUpon>frmListaClientesXActividad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmListaDeudores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmListaDeudores.Designer.cs">
+      <DependentUpon>frmListaDeudores.cs</DependentUpon>
     </Compile>
     <Compile Include="frmMenu.cs">
       <SubType>Form</SubType>
@@ -69,8 +81,14 @@
     <EmbeddedResource Include="frmAgregarNuevo.resx">
       <DependentUpon>frmAgregarNuevo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmListaClientes.resx">
-      <DependentUpon>frmListaClientes.cs</DependentUpon>
+    <EmbeddedResource Include="frmListaDatosClientes.resx">
+      <DependentUpon>frmListaDatosClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmListaClientesXActividad.resx">
+      <DependentUpon>frmListaClientesXActividad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmListaDeudores.resx">
+      <DependentUpon>frmListaDeudores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMenu.resx">
       <DependentUpon>frmMenu.cs</DependentUpon>

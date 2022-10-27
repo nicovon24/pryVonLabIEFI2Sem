@@ -96,8 +96,7 @@ namespace pryVonIEFILabLog
         {
             string detalleResultado = "";
 
-            try
-            {
+            try { 
                 OleDbConnection conexionDB;
 
                 conexionDB = new OleDbConnection(urlDB);
@@ -118,10 +117,12 @@ namespace pryVonIEFILabLog
                         detalleResultado = reader[column_detalle].ToString();
                     }
                 }
+
+                conexionDB.Close();
             }
             catch
             {
-                MessageBox.Show("Error en la función functGetNumOfID!");
+                MessageBox.Show("Error en la función functTransformIdIntoString!");
             }
 
             return detalleResultado; //we return the id and store it in new variables
@@ -151,8 +152,30 @@ namespace pryVonIEFILabLog
 
         private void listadoDeTodosLosClientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
+        }
+
+        private void listadoDeTodosLosClientesToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+
             this.Hide();
-            frmListaClientes frmNew =new frmListaClientes();
+            frmListaDatosClientes frmNew = new frmListaDatosClientes();
+            frmNew.Show();
+        }
+
+        private void listadoDeClientesDeudoresToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listadoDeClientesDeUnaCiudadToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listadoDeClientesEnxActividadToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmListaActividad frmNew = new frmListaActividad();
             frmNew.Show();
         }
     }

@@ -32,14 +32,19 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.sistemaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.agregarNuevosClientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.buscarClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.consultaDeUnClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.listadoDeTodosLosClientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.listadoDeClientesDeudoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.listadoDeClientesDeUnaCiudadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.mostrarListadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listadoDeTodosLosClientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listadoDeClientesDeudoresToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.agregarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.agregarNuevosClientesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.buscarOConsultarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.buscarClienteToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultaDeUnClienteToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.actualizarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listadoDeClientesEnxActividadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -64,53 +69,14 @@
             // clientesToolStripMenuItem
             // 
             this.clientesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.agregarNuevosClientesToolStripMenuItem,
-            this.buscarClienteToolStripMenuItem,
-            this.consultaDeUnClienteToolStripMenuItem,
-            this.listadoDeTodosLosClientesToolStripMenuItem,
-            this.listadoDeClientesDeudoresToolStripMenuItem,
-            this.listadoDeClientesDeUnaCiudadToolStripMenuItem});
+            this.mostrarListadosToolStripMenuItem,
+            this.buscarOConsultarToolStripMenuItem,
+            this.agregarToolStripMenuItem,
+            this.actualizarToolStripMenuItem,
+            this.eliminarToolStripMenuItem});
             this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
             this.clientesToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.clientesToolStripMenuItem.Text = "Clientes";
-            // 
-            // agregarNuevosClientesToolStripMenuItem
-            // 
-            this.agregarNuevosClientesToolStripMenuItem.Name = "agregarNuevosClientesToolStripMenuItem";
-            this.agregarNuevosClientesToolStripMenuItem.Size = new System.Drawing.Size(249, 22);
-            this.agregarNuevosClientesToolStripMenuItem.Text = "Agregar nuevos clientes";
-            this.agregarNuevosClientesToolStripMenuItem.Click += new System.EventHandler(this.agregarNuevosClientesToolStripMenuItem_Click);
-            // 
-            // buscarClienteToolStripMenuItem
-            // 
-            this.buscarClienteToolStripMenuItem.Name = "buscarClienteToolStripMenuItem";
-            this.buscarClienteToolStripMenuItem.Size = new System.Drawing.Size(249, 22);
-            this.buscarClienteToolStripMenuItem.Text = "Buscar cliente";
-            // 
-            // consultaDeUnClienteToolStripMenuItem
-            // 
-            this.consultaDeUnClienteToolStripMenuItem.Name = "consultaDeUnClienteToolStripMenuItem";
-            this.consultaDeUnClienteToolStripMenuItem.Size = new System.Drawing.Size(249, 22);
-            this.consultaDeUnClienteToolStripMenuItem.Text = "Consulta de un cliente";
-            // 
-            // listadoDeTodosLosClientesToolStripMenuItem
-            // 
-            this.listadoDeTodosLosClientesToolStripMenuItem.Name = "listadoDeTodosLosClientesToolStripMenuItem";
-            this.listadoDeTodosLosClientesToolStripMenuItem.Size = new System.Drawing.Size(249, 22);
-            this.listadoDeTodosLosClientesToolStripMenuItem.Text = "Listado de todos los clientes";
-            this.listadoDeTodosLosClientesToolStripMenuItem.Click += new System.EventHandler(this.listadoDeTodosLosClientesToolStripMenuItem_Click);
-            // 
-            // listadoDeClientesDeudoresToolStripMenuItem
-            // 
-            this.listadoDeClientesDeudoresToolStripMenuItem.Name = "listadoDeClientesDeudoresToolStripMenuItem";
-            this.listadoDeClientesDeudoresToolStripMenuItem.Size = new System.Drawing.Size(249, 22);
-            this.listadoDeClientesDeudoresToolStripMenuItem.Text = "Listado de clientes deudores";
-            // 
-            // listadoDeClientesDeUnaCiudadToolStripMenuItem
-            // 
-            this.listadoDeClientesDeUnaCiudadToolStripMenuItem.Name = "listadoDeClientesDeUnaCiudadToolStripMenuItem";
-            this.listadoDeClientesDeUnaCiudadToolStripMenuItem.Size = new System.Drawing.Size(249, 22);
-            this.listadoDeClientesDeUnaCiudadToolStripMenuItem.Text = "Listado de clientes de una ciudad";
             // 
             // salirToolStripMenuItem
             // 
@@ -122,6 +88,84 @@
             // 
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // mostrarListadosToolStripMenuItem
+            // 
+            this.mostrarListadosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.listadoDeTodosLosClientesToolStripMenuItem,
+            this.listadoDeClientesDeudoresToolStripMenuItem1,
+            this.listadoDeClientesEnxActividadToolStripMenuItem});
+            this.mostrarListadosToolStripMenuItem.Name = "mostrarListadosToolStripMenuItem";
+            this.mostrarListadosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.mostrarListadosToolStripMenuItem.Text = "Mostrar listados";
+            // 
+            // listadoDeTodosLosClientesToolStripMenuItem
+            // 
+            this.listadoDeTodosLosClientesToolStripMenuItem.Name = "listadoDeTodosLosClientesToolStripMenuItem";
+            this.listadoDeTodosLosClientesToolStripMenuItem.Size = new System.Drawing.Size(222, 22);
+            this.listadoDeTodosLosClientesToolStripMenuItem.Text = "Listado de todos los clientes";
+            this.listadoDeTodosLosClientesToolStripMenuItem.Click += new System.EventHandler(this.listadoDeTodosLosClientesToolStripMenuItem_Click_1);
+            // 
+            // listadoDeClientesDeudoresToolStripMenuItem1
+            // 
+            this.listadoDeClientesDeudoresToolStripMenuItem1.Name = "listadoDeClientesDeudoresToolStripMenuItem1";
+            this.listadoDeClientesDeudoresToolStripMenuItem1.Size = new System.Drawing.Size(249, 22);
+            this.listadoDeClientesDeudoresToolStripMenuItem1.Text = "Listado de clientes deudores";
+            this.listadoDeClientesDeudoresToolStripMenuItem1.Click += new System.EventHandler(this.listadoDeClientesDeudoresToolStripMenuItem1_Click);
+            // 
+            // agregarToolStripMenuItem
+            // 
+            this.agregarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.agregarNuevosClientesToolStripMenuItem1});
+            this.agregarToolStripMenuItem.Name = "agregarToolStripMenuItem";
+            this.agregarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.agregarToolStripMenuItem.Text = "Agregar";
+            // 
+            // agregarNuevosClientesToolStripMenuItem1
+            // 
+            this.agregarNuevosClientesToolStripMenuItem1.Name = "agregarNuevosClientesToolStripMenuItem1";
+            this.agregarNuevosClientesToolStripMenuItem1.Size = new System.Drawing.Size(204, 22);
+            this.agregarNuevosClientesToolStripMenuItem1.Text = "Agregar Nuevos Clientes";
+            // 
+            // buscarOConsultarToolStripMenuItem
+            // 
+            this.buscarOConsultarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.buscarClienteToolStripMenuItem1,
+            this.consultaDeUnClienteToolStripMenuItem1});
+            this.buscarOConsultarToolStripMenuItem.Name = "buscarOConsultarToolStripMenuItem";
+            this.buscarOConsultarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.buscarOConsultarToolStripMenuItem.Text = "Buscar o consultar";
+            // 
+            // buscarClienteToolStripMenuItem1
+            // 
+            this.buscarClienteToolStripMenuItem1.Name = "buscarClienteToolStripMenuItem1";
+            this.buscarClienteToolStripMenuItem1.Size = new System.Drawing.Size(192, 22);
+            this.buscarClienteToolStripMenuItem1.Text = "Buscar cliente";
+            // 
+            // consultaDeUnClienteToolStripMenuItem1
+            // 
+            this.consultaDeUnClienteToolStripMenuItem1.Name = "consultaDeUnClienteToolStripMenuItem1";
+            this.consultaDeUnClienteToolStripMenuItem1.Size = new System.Drawing.Size(192, 22);
+            this.consultaDeUnClienteToolStripMenuItem1.Text = "Consulta de un cliente";
+            // 
+            // eliminarToolStripMenuItem
+            // 
+            this.eliminarToolStripMenuItem.Name = "eliminarToolStripMenuItem";
+            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.eliminarToolStripMenuItem.Text = "Eliminar";
+            // 
+            // actualizarToolStripMenuItem
+            // 
+            this.actualizarToolStripMenuItem.Name = "actualizarToolStripMenuItem";
+            this.actualizarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.actualizarToolStripMenuItem.Text = "Actualizar";
+            // 
+            // listadoDeClientesEnxActividadToolStripMenuItem
+            // 
+            this.listadoDeClientesEnxActividadToolStripMenuItem.Name = "listadoDeClientesEnxActividadToolStripMenuItem";
+            this.listadoDeClientesEnxActividadToolStripMenuItem.Size = new System.Drawing.Size(257, 22);
+            this.listadoDeClientesEnxActividadToolStripMenuItem.Text = "Listado de clientes en \"x\" actividad";
+            this.listadoDeClientesEnxActividadToolStripMenuItem.Click += new System.EventHandler(this.listadoDeClientesEnxActividadToolStripMenuItem_Click);
             // 
             // frmMenu
             // 
@@ -147,11 +191,16 @@
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem clientesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem agregarNuevosClientesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem buscarClienteToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem consultaDeUnClienteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mostrarListadosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listadoDeTodosLosClientesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem listadoDeClientesDeudoresToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem listadoDeClientesDeUnaCiudadToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem listadoDeClientesDeudoresToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem buscarOConsultarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem buscarClienteToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem consultaDeUnClienteToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem agregarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem agregarNuevosClientesToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem actualizarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem eliminarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem listadoDeClientesEnxActividadToolStripMenuItem;
     }
 }
