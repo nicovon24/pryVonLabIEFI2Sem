@@ -27,6 +27,7 @@ namespace pryVonIEFILabLog
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
+            //getting the id from actividad, bcs we want to search it then in clientes so we get the values dni and name
             grdListaClientes.Rows.Clear();
 
             int id = 0;
@@ -35,37 +36,36 @@ namespace pryVonIEFILabLog
             conexionDB = new OleDbConnection(frmMenu.urlDB);
             conexionDB.Open();
 
-            OleDbCommand comando = new OleDbCommand();
-            comando.Connection = conexionDB;
-            comando.CommandType = CommandType.TableDirect;
-            comando.CommandText = "SELECT * FROM ACTIVIDADES";
-            OleDbDataReader reader = comando.ExecuteReader();
+            OleDbCommand comandoActividades = new OleDbCommand();
+            comandoActividades.Connection = conexionDB;
+            comandoActividades.CommandType = CommandType.TableDirect;
+            comandoActividades.CommandText = "SELECT * FROM ACTIVIDADES";
+            OleDbDataReader readerActividades = comandoActividades.ExecuteReader();
 
-            while (reader.Read())
+            while (readerActividades.Read())
             {
-                if (reader["Detalle"].ToString()==cbActividad.Text)
+                if (readerActividades["Detalle"].ToString() == cbActividad.Text)
                 {
-                    id = int.Parse(reader["Cod_actividad"].ToString());
+                    id = int.Parse(readerActividades["Cod_actividad"].ToString());
                 }
             }
 
+            //getting the data from the id actividad
+            OleDbCommand comandoClientes= new OleDbCommand();
+            comandoClientes.Connection = conexionDB;
+            comandoClientes.CommandType = CommandType.TableDirect;
+            comandoClientes.CommandText = "SELECT * FROM CLIENTES";
+            OleDbDataReader readerClientes = comandoClientes.ExecuteReader();
 
-            OleDbCommand comando2 = new OleDbCommand();
-            comando2.Connection = conexionDB;
-            comando2.CommandType = CommandType.TableDirect;
-            comando2.CommandText = "SELECT * FROM CLIENTES";
-            OleDbDataReader reader2 = comando2.ExecuteReader();
-
-            while (reader.Read())
+            while (readerClientes.Read())
             {
-                if (int.Parse(reader["ID_actividad"].ToString()) == id)
+                if (int.Parse(readerClientes["ID_actividad"].ToString()) == id)
                 {
-                    grdListaClientes.Rows.Add(reader["DNI"], reader["Nombre y apellido"]);
+                    grdListaClientes.Rows.Add(readerClientes["DNI"], readerClientes["Nombre y apellido"]);
                 }
             }
 
-
-
+            readerClientes.Close();
             conexionDB.Close();
 
             btnBorrar.Enabled = true;
@@ -73,7 +73,15 @@ namespace pryVonIEFILabLog
 
         private void btnBorrar_Click(object sender, EventArgs e)
         {
+            grdListaClientes.Rows.Clear();
             btnBorrar.Enabled = false;
+        }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmMenu frmMenu = new frmMenu();
+            frmMenu.Show();
         }
     }
 }

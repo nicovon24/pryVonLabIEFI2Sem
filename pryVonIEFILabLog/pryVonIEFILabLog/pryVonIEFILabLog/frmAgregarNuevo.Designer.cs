@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblCiudad = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblDNI = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
@@ -51,18 +50,8 @@
             this.lblSucursal = new System.Windows.Forms.Label();
             this.cbProfesor = new System.Windows.Forms.ComboBox();
             this.lblProfesor = new System.Windows.Forms.Label();
-            this.cbCiudad = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudDeuda)).BeginInit();
             this.SuspendLayout();
-            // 
-            // lblCiudad
-            // 
-            this.lblCiudad.AutoSize = true;
-            this.lblCiudad.Location = new System.Drawing.Point(14, 156);
-            this.lblCiudad.Name = "lblCiudad";
-            this.lblCiudad.Size = new System.Drawing.Size(40, 13);
-            this.lblCiudad.TabIndex = 0;
-            this.lblCiudad.Text = "Ciudad";
             // 
             // lblNombre
             // 
@@ -92,7 +81,7 @@
             // 
             // nudDeuda
             // 
-            this.nudDeuda.Location = new System.Drawing.Point(131, 237);
+            this.nudDeuda.Location = new System.Drawing.Point(133, 194);
             this.nudDeuda.Maximum = new decimal(new int[] {
             400000,
             0,
@@ -114,7 +103,7 @@
             // lblBarrio
             // 
             this.lblBarrio.AutoSize = true;
-            this.lblBarrio.Location = new System.Drawing.Point(14, 194);
+            this.lblBarrio.Location = new System.Drawing.Point(16, 151);
             this.lblBarrio.Name = "lblBarrio";
             this.lblBarrio.Size = new System.Drawing.Size(34, 13);
             this.lblBarrio.TabIndex = 18;
@@ -141,7 +130,7 @@
             // lblDeuda
             // 
             this.lblDeuda.AutoSize = true;
-            this.lblDeuda.Location = new System.Drawing.Point(14, 239);
+            this.lblDeuda.Location = new System.Drawing.Point(16, 196);
             this.lblDeuda.Name = "lblDeuda";
             this.lblDeuda.Size = new System.Drawing.Size(39, 13);
             this.lblDeuda.TabIndex = 23;
@@ -189,14 +178,14 @@
             // cbBarrio
             // 
             this.cbBarrio.FormattingEnabled = true;
-            this.cbBarrio.Location = new System.Drawing.Point(131, 194);
+            this.cbBarrio.Location = new System.Drawing.Point(133, 151);
             this.cbBarrio.Name = "cbBarrio";
             this.cbBarrio.Size = new System.Drawing.Size(121, 21);
             this.cbBarrio.TabIndex = 30;
             // 
             // btnAnadir
             // 
-            this.btnAnadir.Location = new System.Drawing.Point(436, 289);
+            this.btnAnadir.Location = new System.Drawing.Point(436, 256);
             this.btnAnadir.Name = "btnAnadir";
             this.btnAnadir.Size = new System.Drawing.Size(86, 45);
             this.btnAnadir.TabIndex = 34;
@@ -206,7 +195,7 @@
             // 
             // btnVolver
             // 
-            this.btnVolver.Location = new System.Drawing.Point(14, 289);
+            this.btnVolver.Location = new System.Drawing.Point(19, 256);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(91, 45);
             this.btnVolver.TabIndex = 35;
@@ -265,20 +254,11 @@
             this.lblProfesor.TabIndex = 50;
             this.lblProfesor.Text = "Profesor";
             // 
-            // cbCiudad
-            // 
-            this.cbCiudad.FormattingEnabled = true;
-            this.cbCiudad.Location = new System.Drawing.Point(131, 153);
-            this.cbCiudad.Name = "cbCiudad";
-            this.cbCiudad.Size = new System.Drawing.Size(121, 21);
-            this.cbCiudad.TabIndex = 52;
-            // 
             // frmAgregarNuevo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(543, 357);
-            this.Controls.Add(this.cbCiudad);
+            this.ClientSize = new System.Drawing.Size(543, 330);
             this.Controls.Add(this.cbProfesor);
             this.Controls.Add(this.lblProfesor);
             this.Controls.Add(this.cbSucursal);
@@ -297,7 +277,6 @@
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.lblDNI);
             this.Controls.Add(this.lblNombre);
-            this.Controls.Add(this.lblCiudad);
             this.Controls.Add(this.cbSexo);
             this.Controls.Add(this.txtDNI);
             this.Controls.Add(this.nudDeuda);
@@ -312,8 +291,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lblCiudad;
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Label lblDNI;
         private System.Windows.Forms.TextBox txtNombre;
@@ -336,6 +313,5 @@
         private System.Windows.Forms.Label lblSucursal;
         private System.Windows.Forms.ComboBox cbProfesor;
         private System.Windows.Forms.Label lblProfesor;
-        private System.Windows.Forms.ComboBox cbCiudad;
     }
 }

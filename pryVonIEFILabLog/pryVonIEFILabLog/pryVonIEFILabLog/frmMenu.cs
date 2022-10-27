@@ -143,13 +143,6 @@ namespace pryVonIEFILabLog
 
         }
 
-        private void agregarNuevosClientesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            frmAgregarNuevo frmNew = new frmAgregarNuevo();
-            frmNew.Show();
-        }
-
         private void listadoDeTodosLosClientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
         }
@@ -164,18 +157,30 @@ namespace pryVonIEFILabLog
 
         private void listadoDeClientesDeudoresToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void listadoDeClientesDeUnaCiudadToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-
+            this.Hide();
+            frmListaDeudores frmNew = new frmListaDeudores();
+            frmNew.Show();
         }
 
         private void listadoDeClientesEnxActividadToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
             frmListaActividad frmNew = new frmListaActividad();
+            frmNew.Show();
+        }
+
+        private void agregarNuevosClientesToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+            this.Hide();
+            frmAgregarNuevo frmNew = new frmAgregarNuevo();
+            frmNew.Show();
+        }
+
+        private void consultaDeDatosEstratégicosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmConsultaDatosEstrategicos frmNew = new frmConsultaDatosEstrategicos();
             frmNew.Show();
         }
     }

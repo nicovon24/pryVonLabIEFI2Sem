@@ -17,8 +17,6 @@ namespace pryVonIEFILabLog
     public partial class frmListaDatosClientes : Form
     {
         public frmMenu frmMenu = new frmMenu();
-        public int totalDeuda = 0;
-        public int counterClientes = 0;
 
         public frmListaDatosClientes()
         {
@@ -38,8 +36,6 @@ namespace pryVonIEFILabLog
         {
             try
             {
-                totalDeuda = 0;
-                counterClientes = 0;
                 grdClientes.Rows.Clear();
 
                 OleDbConnection conexionDB;
@@ -56,26 +52,17 @@ namespace pryVonIEFILabLog
 
                 while (reader.Read())
                 {
-                    string strCiudad = frmMenu.functTransformIDIntoString("Ciudades", "Cod_ciudad", "Detalle", int.Parse(reader["ID_ciudad"].ToString()));
                     string strBarrio = frmMenu.functTransformIDIntoString("Barrios", "Cod_barrio", "Detalle", int.Parse(reader["ID_barrio"].ToString()));
                     string strSucursal = frmMenu.functTransformIDIntoString("Sucursales", "Cod_sucursal", "Detalle", int.Parse(reader["ID_sucursal"].ToString()));
-                    string strProfesor = frmMenu.functTransformIDIntoString("Profesores", "Cod_profesor", "Nombre", int.Parse(reader["ID_profesor"].ToString()));
                     string strActividad = frmMenu.functTransformIDIntoString("Actividades", "Cod_actividad", "Detalle", int.Parse(reader["ID_actividad"].ToString()));
 
-                    grdClientes.Rows.Add(reader["DNI"], reader["Nombre y apellido"], "$" + reader["Deuda"], reader["Sexo"], strCiudad, strBarrio, strSucursal,
-                    strProfesor, strActividad, reader["Teléfono"], reader["Email"]);
-
-                    totalDeuda += int.Parse(reader["Deuda"].ToString());
-                    counterClientes++;
+                    grdClientes.Rows.Add(reader["DNI"], reader["Nombre y apellido"], "$" + reader["Deuda"], strBarrio, strSucursal,
+                     strActividad);
                 }
 
+                reader.Close();
                 conexionDB.Close();
 
-                int promedio = totalDeuda / counterClientes;
-
-                lblTotalDeudaRes.Text = "$" + totalDeuda;
-                lblCantClientesRes.Text = counterClientes + " clientes";
-                lblPromDeudaRes.Text = "$" + promedio;
                 btnMostrar.Enabled = false;
                 btnBorrar.Enabled = true;
 
@@ -96,9 +83,6 @@ namespace pryVonIEFILabLog
             grdClientes.Rows.Clear();
             btnMostrar.Enabled = true;
             btnBorrar.Enabled = false;
-            lblCantClientesRes.Text = "";
-            lblTotalDeudaRes.Text = "";
-            lblPromDeudaRes.Text = "";
         }
     }
 }

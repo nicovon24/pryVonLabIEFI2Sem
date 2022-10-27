@@ -26,7 +26,6 @@ namespace pryVonIEFILabLog
         private void frmAgregarNuevo_Load(object sender, EventArgs e)
         {
             //defining values to the combo boxes depending to the access files values
-            frmMenu.functChangeCbValue("Ciudades", "Detalle", cbCiudad);
             frmMenu.functChangeCbValue("Barrios", "Detalle", cbBarrio);
             frmMenu.functChangeCbValue("Actividades", "Detalle", cbActividad);
             frmMenu.functChangeCbValue("Profesores", "Nombre", cbProfesor);
@@ -45,7 +44,6 @@ namespace pryVonIEFILabLog
         private void btnAnadir_Click(object sender, EventArgs e)
         {
             //getting the ids from these columns
-            int cod_ciudad = frmMenu.functTransformStringToID("Ciudades", "Cod_ciudad", "Detalle", cbCiudad.Text);
                 int cod_barrio = frmMenu.functTransformStringToID("Barrios", "Cod_barrio", "Detalle", cbBarrio.Text);
                 int cod_sucursal = frmMenu.functTransformStringToID("Sucursales", "Cod_sucursal", "Detalle", cbSucursal.Text);
                 int cod_profesor = frmMenu.functTransformStringToID("Profesores", "Cod_profesor", "Nombre", cbProfesor.Text);
@@ -53,11 +51,10 @@ namespace pryVonIEFILabLog
 
 
             //sqlSentence for the program
-                string sqlTables = "DNI, [Nombre y apellido],  Sexo, ID_ciudad, ID_barrio, ID_sucursal, ID_profesor, ID_actividad, Teléfono, Email, Deuda";
+                string sqlTables = "DNI, [Nombre y apellido],  Sexo,  ID_barrio, ID_sucursal, ID_profesor, ID_actividad, Teléfono, Email, Deuda";
                 string sqlCommand = " " + txtDNI.Text + ", " + 
                 "' " + txtNombre.Text + "', " +
                 "'" + cbSexo.Text + "', " +
-                cod_ciudad + ", " +
                 cod_barrio + ", " +
                 cod_sucursal + ", " +
                 cod_profesor + ", " +

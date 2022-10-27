@@ -52,6 +52,12 @@
     <Compile Include="frmAgregarNuevo.Designer.cs">
       <DependentUpon>frmAgregarNuevo.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmConsultaDatosEstrategicos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConsultaDatosEstrategicos.Designer.cs">
+      <DependentUpon>frmConsultaDatosEstrategicos.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmListaDatosClientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +86,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmAgregarNuevo.resx">
       <DependentUpon>frmAgregarNuevo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmConsultaDatosEstrategicos.resx">
+      <DependentUpon>frmConsultaDatosEstrategicos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmListaDatosClientes.resx">
       <DependentUpon>frmListaDatosClientes.cs</DependentUpon>

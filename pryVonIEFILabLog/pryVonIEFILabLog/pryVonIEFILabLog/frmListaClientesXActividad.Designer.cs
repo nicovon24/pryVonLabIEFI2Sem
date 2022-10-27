@@ -34,6 +34,8 @@
             this.btnVolver = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnBorrar = new System.Windows.Forms.Button();
+            this.colDNI = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grdListaClientes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,9 +60,12 @@
             // 
             this.grdListaClientes.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.grdListaClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdListaClientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colDNI,
+            this.colNombre});
             this.grdListaClientes.Location = new System.Drawing.Point(25, 79);
             this.grdListaClientes.Name = "grdListaClientes";
-            this.grdListaClientes.Size = new System.Drawing.Size(507, 245);
+            this.grdListaClientes.Size = new System.Drawing.Size(506, 245);
             this.grdListaClientes.TabIndex = 2;
             // 
             // btnVolver
@@ -71,6 +76,7 @@
             this.btnVolver.TabIndex = 37;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = true;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
             // btnBuscar
             // 
@@ -92,11 +98,21 @@
             this.btnBorrar.UseVisualStyleBackColor = true;
             this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
             // 
+            // colDNI
+            // 
+            this.colDNI.HeaderText = "DNI";
+            this.colDNI.Name = "colDNI";
+            // 
+            // colNombre
+            // 
+            this.colNombre.HeaderText = "Nombre";
+            this.colNombre.Name = "colNombre";
+            // 
             // frmListaActividad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(557, 438);
+            this.ClientSize = new System.Drawing.Size(585, 442);
             this.Controls.Add(this.btnBorrar);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.btnBuscar);
@@ -120,5 +136,7 @@
         private System.Windows.Forms.Button btnVolver;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button btnBorrar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colDNI;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colNombre;
     }
 }
