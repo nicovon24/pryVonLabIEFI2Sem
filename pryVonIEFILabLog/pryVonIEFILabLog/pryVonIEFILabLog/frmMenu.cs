@@ -44,6 +44,8 @@ namespace pryVonIEFILabLog
                 {
                     comboBox.Items.Add(reader[column].ToString());
                 }
+                conexionDB.Close();
+                reader.Close();
             }
             catch
             {
@@ -80,6 +82,8 @@ namespace pryVonIEFILabLog
                         id = int.Parse(reader[column_id].ToString());
                     }
                 }
+                conexionDB.Close();
+                reader.Close();
             }
             catch
             {
@@ -119,6 +123,7 @@ namespace pryVonIEFILabLog
                 }
 
                 conexionDB.Close();
+                reader.Close();
             }
             catch
             {
@@ -166,6 +171,7 @@ namespace pryVonIEFILabLog
                 grd.Rows.Add(dataColCero, readerClientes[1]); //name of sucursal, counter
             }
             readerClientes.Close();
+            conexionDB.Close();
         }
 
         public frmMenu()
@@ -234,6 +240,20 @@ namespace pryVonIEFILabLog
         {
             this.Hide();
             frmBuscarSaldoCliente frmNew = new frmBuscarSaldoCliente();
+            frmNew.Show();
+        }
+
+        private void actualizarDeudaDeClienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmActualizarDeuda frmNew = new frmActualizarDeuda();
+            frmNew.Show();
+        }
+
+        private void eliminarClienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmEliminarCliente frmNew = new frmEliminarCliente();
             frmNew.Show();
         }
     }

@@ -36,7 +36,7 @@ namespace pryVonIEFILabLog
 
         private void btnMostrar_Click(object sender, EventArgs e)
         {
-            lblDeudaRes.Text = "No se ha encontrado todavía al sujeto";
+            lblDeudaRes.Text = "No se ha encontrado al sujeto"; //will be executed always, if the user is not found, this msg will be shown
 
             if (txtDNI.Text != "")
             {
@@ -58,11 +58,13 @@ namespace pryVonIEFILabLog
                     {
                         lblDeudaRes.Text = "$" + readerCliente["Deuda"].ToString();
                     }
+                    conexionDB.Close();
+                    readerCliente.Close();
                 }
 
                 catch
                 {
-                    MessageBox.Show("Error en el mostrado de saldo del client");
+                    MessageBox.Show("Error en el mostrado de saldo del cliente");
                 }
             }
             else
@@ -74,6 +76,11 @@ namespace pryVonIEFILabLog
         private void btnBorrar_Click(object sender, EventArgs e)
         {
             lblDeudaRes.Text = "Datos borrados";
+        }
+
+        private void txtDNI_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -32,9 +32,9 @@
             this.btnMostrar = new System.Windows.Forms.Button();
             this.btnBorrar = new System.Windows.Forms.Button();
             this.gbDatos = new System.Windows.Forms.GroupBox();
-            this.lblDNI = new System.Windows.Forms.Label();
-            this.lblDeudad = new System.Windows.Forms.Label();
             this.lblDeudaRes = new System.Windows.Forms.Label();
+            this.lblDeudad = new System.Windows.Forms.Label();
+            this.lblDNI = new System.Windows.Forms.Label();
             this.txtDNI = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.gbDatos.SuspendLayout();
@@ -81,13 +81,15 @@
             this.gbDatos.TabStop = false;
             this.gbDatos.Text = "Datos cliente";
             // 
-            // lblDNI
+            // lblDeudaRes
             // 
-            this.lblDNI.Location = new System.Drawing.Point(12, 9);
-            this.lblDNI.Name = "lblDNI";
-            this.lblDNI.Size = new System.Drawing.Size(86, 19);
-            this.lblDNI.TabIndex = 47;
-            this.lblDNI.Text = "Código cliente\r\n";
+            this.lblDeudaRes.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblDeudaRes.Location = new System.Drawing.Point(27, 58);
+            this.lblDeudaRes.Name = "lblDeudaRes";
+            this.lblDeudaRes.Size = new System.Drawing.Size(217, 29);
+            this.lblDeudaRes.TabIndex = 49;
+            this.lblDeudaRes.Text = "Inserte el dni que quiere buscar";
+            this.lblDeudaRes.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblDeudad
             // 
@@ -98,15 +100,13 @@
             this.lblDeudad.TabIndex = 48;
             this.lblDeudad.Text = "Deuda";
             // 
-            // lblDeudaRes
+            // lblDNI
             // 
-            this.lblDeudaRes.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblDeudaRes.Location = new System.Drawing.Point(27, 58);
-            this.lblDeudaRes.Name = "lblDeudaRes";
-            this.lblDeudaRes.Size = new System.Drawing.Size(217, 29);
-            this.lblDeudaRes.TabIndex = 49;
-            this.lblDeudaRes.Text = "No se ha encontrado todavía al sujeto";
-            this.lblDeudaRes.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblDNI.Location = new System.Drawing.Point(12, 9);
+            this.lblDNI.Name = "lblDNI";
+            this.lblDNI.Size = new System.Drawing.Size(86, 19);
+            this.lblDNI.TabIndex = 47;
+            this.lblDNI.Text = "DNI cliente\r\n";
             // 
             // txtDNI
             // 
@@ -115,6 +115,7 @@
             this.txtDNI.Name = "txtDNI";
             this.txtDNI.Size = new System.Drawing.Size(110, 20);
             this.txtDNI.TabIndex = 48;
+            this.txtDNI.TextChanged += new System.EventHandler(this.txtDNI_TextChanged);
             this.txtDNI.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDNI_KeyPress);
             // 
             // label1
