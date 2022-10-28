@@ -41,31 +41,25 @@ namespace pryVonIEFILabLog
                 OleDbCommand comandoActividades = new OleDbCommand();
                 comandoActividades.Connection = conexionDB;
                 comandoActividades.CommandType = CommandType.TableDirect;
-                comandoActividades.CommandText = "SELECT * FROM ACTIVIDADES";
+                comandoActividades.CommandText = "SELECT * FROM ACTIVIDADES WHERE Detalle='" + cbActividad.Text + "'";
                 OleDbDataReader readerActividades = comandoActividades.ExecuteReader();
 
                 while (readerActividades.Read())
                 {
-                    if (readerActividades["Detalle"].ToString() == cbActividad.Text)
-                    {
-                        id = int.Parse(readerActividades["Cod_actividad"].ToString());
-                    }
+                    id = int.Parse(readerActividades["Cod_actividad"].ToString());
                 }
 
                 //getting the data from the id actividad
                 OleDbCommand comandoClientes = new OleDbCommand();
                 comandoClientes.Connection = conexionDB;
                 comandoClientes.CommandType = CommandType.TableDirect;
-                comandoClientes.CommandText = "SELECT * FROM CLIENTES";
+                comandoClientes.CommandText = "SELECT * FROM Clientes WHERE ID_actividad=" + id;
                 OleDbDataReader readerClientes = comandoClientes.ExecuteReader();
 
                 //getting the clients which practice that activity
                 while (readerClientes.Read())
                 {
-                    if (int.Parse(readerClientes["ID_actividad"].ToString()) == id)
-                    {
-                        grdListaClientes.Rows.Add(readerClientes["DNI"], readerClientes["Nombre y apellido"]);
-                    }
+                    grdListaClientes.Rows.Add(readerClientes["DNI"], readerClientes["Nombre y apellido"]);
                 }
 
                 readerClientes.Close();
@@ -76,7 +70,7 @@ namespace pryVonIEFILabLog
 
             catch
             {
-                MessageBox.Show("Error en el mostrado de datos de actividades");
+                MessageBox.Show("Error en la muestra de las actividades en la grilla");
             }
         }
 

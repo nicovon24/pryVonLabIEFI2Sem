@@ -64,3 +64,4 @@ C:\Users\Nicolas\Downloads\pryVonLabIEFI2Sem\pryVonIEFILabLog\pryVonIEFILabLog\p
 C:\Users\Nicolas\Downloads\pryVonLabIEFI2Sem\pryVonIEFILabLog\pryVonIEFILabLog\pryVonIEFILabLog\obj\Debug\pryVonIEFILabLog.exe
 C:\Users\Nicolas\Downloads\pryVonLabIEFI2Sem\pryVonIEFILabLog\pryVonIEFILabLog\pryVonIEFILabLog\obj\Debug\pryVonIEFILabLog.pdb
 C:\Users\Nicolas\Downloads\pryVonLabIEFI2Sem\pryVonIEFILabLog\pryVonIEFILabLog\pryVonIEFILabLog\obj\Debug\pryVonIEFILabLog.frmConsultaDatosEstrategicos.resources
+C:\Users\Nicolas\Downloads\pryVonLabIEFI2Sem\pryVonIEFILabLog\pryVonIEFILabLog\pryVonIEFILabLog\obj\Debug\pryVonIEFILabLog.frmBuscarSaldoCliente.resources

@@ -39,6 +39,8 @@
             this.btnVolver = new System.Windows.Forms.Button();
             this.btnMostrar = new System.Windows.Forms.Button();
             this.btnBorrar = new System.Windows.Forms.Button();
+            this.lblTotalClientesRes = new System.Windows.Forms.Label();
+            this.lblTotalClientes = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.grdClientes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -90,7 +92,7 @@
             // 
             // btnVolver
             // 
-            this.btnVolver.Location = new System.Drawing.Point(272, 326);
+            this.btnVolver.Location = new System.Drawing.Point(321, 328);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(84, 42);
             this.btnVolver.TabIndex = 36;
@@ -100,7 +102,7 @@
             // 
             // btnMostrar
             // 
-            this.btnMostrar.Location = new System.Drawing.Point(576, 326);
+            this.btnMostrar.Location = new System.Drawing.Point(576, 328);
             this.btnMostrar.Name = "btnMostrar";
             this.btnMostrar.Size = new System.Drawing.Size(84, 42);
             this.btnMostrar.TabIndex = 37;
@@ -110,7 +112,7 @@
             // 
             // btnBorrar
             // 
-            this.btnBorrar.Location = new System.Drawing.Point(424, 326);
+            this.btnBorrar.Location = new System.Drawing.Point(449, 328);
             this.btnBorrar.Name = "btnBorrar";
             this.btnBorrar.Size = new System.Drawing.Size(84, 42);
             this.btnBorrar.TabIndex = 38;
@@ -118,11 +120,31 @@
             this.btnBorrar.UseVisualStyleBackColor = true;
             this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
             // 
+            // lblTotalClientesRes
+            // 
+            this.lblTotalClientesRes.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblTotalClientesRes.Location = new System.Drawing.Point(21, 347);
+            this.lblTotalClientesRes.Name = "lblTotalClientesRes";
+            this.lblTotalClientesRes.Size = new System.Drawing.Size(202, 23);
+            this.lblTotalClientesRes.TabIndex = 39;
+            this.lblTotalClientesRes.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblTotalClientes
+            // 
+            this.lblTotalClientes.AutoSize = true;
+            this.lblTotalClientes.Location = new System.Drawing.Point(76, 328);
+            this.lblTotalClientes.Name = "lblTotalClientes";
+            this.lblTotalClientes.Size = new System.Drawing.Size(85, 13);
+            this.lblTotalClientes.TabIndex = 40;
+            this.lblTotalClientes.Text = "Total de clientes";
+            // 
             // frmListaDatosClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(684, 393);
+            this.ClientSize = new System.Drawing.Size(684, 388);
+            this.Controls.Add(this.lblTotalClientes);
+            this.Controls.Add(this.lblTotalClientesRes);
             this.Controls.Add(this.btnBorrar);
             this.Controls.Add(this.btnMostrar);
             this.Controls.Add(this.btnVolver);
@@ -132,6 +154,7 @@
             this.Load += new System.EventHandler(this.frmListaClientes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grdClientes)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -148,5 +171,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colBarrio;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSucursal;
         private System.Windows.Forms.DataGridViewTextBoxColumn colActividad;
+        private System.Windows.Forms.Label lblTotalClientesRes;
+        private System.Windows.Forms.Label lblTotalClientes;
     }
 }

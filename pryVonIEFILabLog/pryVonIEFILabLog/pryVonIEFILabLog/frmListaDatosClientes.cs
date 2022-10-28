@@ -36,6 +36,7 @@ namespace pryVonIEFILabLog
         {
             try
             {
+                int totalClients = 0;
                 grdClientes.Rows.Clear();
 
                 OleDbConnection conexionDB;
@@ -47,7 +48,7 @@ namespace pryVonIEFILabLog
 
                 comando.Connection = conexionDB;
                 comando.CommandType = CommandType.TableDirect;
-                comando.CommandText = "SELECT * FROM CLIENTES";
+                comando.CommandText = "SELECT * FROM Clientes";
                 OleDbDataReader reader = comando.ExecuteReader();
 
                 while (reader.Read())
@@ -58,6 +59,8 @@ namespace pryVonIEFILabLog
 
                     grdClientes.Rows.Add(reader["DNI"], reader["Nombre y apellido"], "$" + reader["Deuda"], strBarrio, strSucursal,
                      strActividad);
+
+                    totalClients++;
                 }
 
                 reader.Close();
@@ -65,6 +68,8 @@ namespace pryVonIEFILabLog
 
                 btnMostrar.Enabled = false;
                 btnBorrar.Enabled = true;
+
+                lblTotalClientesRes.Text = totalClients.ToString();
 
             }
             catch
@@ -83,6 +88,7 @@ namespace pryVonIEFILabLog
             grdClientes.Rows.Clear();
             btnMostrar.Enabled = true;
             btnBorrar.Enabled = false;
+            lblTotalClientesRes.Text = "";
         }
     }
 }

@@ -32,10 +32,10 @@
             this.lblMSG = new System.Windows.Forms.Label();
             this.lblPromedio = new System.Windows.Forms.Label();
             this.grdData = new System.Windows.Forms.DataGridView();
-            this.btnMostrar = new System.Windows.Forms.Button();
-            this.btnVolver = new System.Windows.Forms.Button();
             this.colDato = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colValor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnMostrar = new System.Windows.Forms.Button();
+            this.btnVolver = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.grdData)).BeginInit();
             this.SuspendLayout();
             // 
@@ -45,10 +45,12 @@
             this.cbInput.Items.AddRange(new object[] {
             "Barrio",
             "Sucursal",
-            "Actividad"});
+            "Actividad",
+            "Profesor",
+            "Sexo"});
             this.cbInput.Location = new System.Drawing.Point(12, 88);
             this.cbInput.Name = "cbInput";
-            this.cbInput.Size = new System.Drawing.Size(171, 21);
+            this.cbInput.Size = new System.Drawing.Size(154, 21);
             this.cbInput.TabIndex = 0;
             this.cbInput.SelectedIndexChanged += new System.EventHandler(this.cbInput_SelectedIndexChanged);
             // 
@@ -82,6 +84,16 @@
             this.grdData.Size = new System.Drawing.Size(358, 150);
             this.grdData.TabIndex = 41;
             // 
+            // colDato
+            // 
+            this.colDato.HeaderText = "Dato";
+            this.colDato.Name = "colDato";
+            // 
+            // colValor
+            // 
+            this.colValor.HeaderText = "Valor";
+            this.colValor.Name = "colValor";
+            // 
             // btnMostrar
             // 
             this.btnMostrar.Location = new System.Drawing.Point(294, 314);
@@ -101,16 +113,6 @@
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = true;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
-            // 
-            // colDato
-            // 
-            this.colDato.HeaderText = "Dato";
-            this.colDato.Name = "colDato";
-            // 
-            // colValor
-            // 
-            this.colValor.HeaderText = "Valor";
-            this.colValor.Name = "colValor";
             // 
             // frmConsultaDatosEstrategicos
             // 

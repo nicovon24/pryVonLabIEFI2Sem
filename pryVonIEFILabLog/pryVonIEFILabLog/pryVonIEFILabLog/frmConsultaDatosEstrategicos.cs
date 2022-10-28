@@ -6,6 +6,7 @@ using System.Data;
 using System.Data.OleDb;
 using System.Drawing;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -32,8 +33,6 @@ namespace pryVonIEFILabLog
         {
             grdData.Rows.Clear();
 
-            try
-            {
                 string cbOption = cbInput.Text;
 
                 OleDbConnection conexionDB;
@@ -44,127 +43,66 @@ namespace pryVonIEFILabLog
                 comandoClientes.Connection = conexionDB;
                 comandoClientes.CommandType = CommandType.TableDirect;
 
-                //codigo monotono, no pude hacerlo en función
                 //basicamente segun el campo elegido en el combo box cuenta los valores de cada campo y los muestra en grilla
                 switch (cbOption)
                 {
                     case "Barrio":
-                        grdData.Columns[0].HeaderText = "Barrio"; //changing the header from the first column
-                        grdData.Columns[1].HeaderText = "Número de clientes"; //changing the header from the first column
+                        string queryBarrio = "SELECT ID_barrio, Count(ID_barrio) FROM CLIENTES " + 
+                        "GROUP BY ID_barrio ORDER BY Count(ID_barrio) DESC";
 
-                        comandoClientes.CommandText = "SELECT ID_barrio, Count(ID_barrio) FROM CLIENTES " + //ordering the barrios depending on the counting
-                            "GROUP BY ID_barrio ORDER BY Count(ID_barrio) DESC";
-                        OleDbDataReader readerClientes = comandoClientes.ExecuteReader();
-                        while (readerClientes.Read())
-                        {
-                            string barrio = "";
-                            OleDbCommand comandoBarrios = new OleDbCommand();
-                            comandoBarrios.Connection = conexionDB;
-                            comandoBarrios.CommandType = CommandType.TableDirect;
-                            comandoBarrios.CommandText = "Select * FROM Barrios";
-
-                            OleDbDataReader readerBarrios = comandoBarrios.ExecuteReader();
-
-                            while (readerBarrios.Read())
-                            {
-
-                                if (int.Parse(readerBarrios["Cod_barrio"].ToString()) == int.Parse(readerClientes["ID_barrio"].ToString()))
-                                {
-                                    barrio = readerBarrios["Detalle"].ToString();
-                                }
-
-                            }
-
-                            grdData.Rows.Add(barrio, readerClientes[1]); //name of sucursal, counter
-                        }
-                        readerClientes.Close();
+                        frmMenu.functGetStrategicData("Barrios", "Barrio", queryBarrio, "ID_barrio", "Cod_barrio", "Detalle", grdData);
                         break;
 
 
                     case "Sucursal":
+                        string querySucursal = "SELECT ID_sucursal, Count(ID_sucursal) FROM CLIENTES " + 
+                        "GROUP BY ID_sucursal ORDER BY Count(ID_sucursal) DESC";
 
-                        grdData.Columns[0].HeaderText = "Sucursal";
-                        grdData.Columns[1].HeaderText = "Número de clientes";
-
-                        comandoClientes.CommandText = "SELECT ID_sucursal, Count(ID_sucursal) FROM CLIENTES " + //counting the number of barrios
-                            "GROUP BY ID_sucursal ORDER BY Count(ID_sucursal) DESC";
-                        OleDbDataReader readerClientes2 = comandoClientes.ExecuteReader();
-
-                        while (readerClientes2.Read())
-                        {
-                            string sucursal = "";
-                            OleDbCommand comandoSucursales = new OleDbCommand();
-                            comandoSucursales.Connection = conexionDB;
-                            comandoSucursales.CommandType = CommandType.TableDirect;
-                            comandoSucursales.CommandText = "Select * FROM Sucursales";
-
-                            OleDbDataReader readerSucursales = comandoSucursales.ExecuteReader();
-
-                            while (readerSucursales.Read())
-                            {
-
-                                if (int.Parse(readerSucursales["Cod_sucursal"].ToString()) == int.Parse(readerClientes2["ID_sucursal"].ToString()))
-                                {
-                                    sucursal = readerSucursales["Detalle"].ToString();
-                                }
-
-                            }
-
-                            grdData.Rows.Add(sucursal, readerClientes2[1]); //name, counter
-
-                            readerSucursales.Close();
-                        }
-
-                        readerClientes2.Close();
-                        break;
+                        frmMenu.functGetStrategicData("Sucursales", "Sucursal", querySucursal, "ID_sucursal", "Cod_sucursal", "Detalle", grdData);
+                    break;
 
 
                     case "Actividad":
+                        string queryActividad = "SELECT ID_actividad, Count(ID_actividad) FROM CLIENTES " +
+                        "GROUP BY ID_actividad ORDER BY Count(ID_actividad) DESC";
 
-                        grdData.Columns[0].HeaderText = "Actividad"; //changing the header from the first column
+                        frmMenu.functGetStrategicData("Actividades", "Actividad", queryActividad, "ID_actividad", "Cod_actividad", "Detalle", grdData);
+                    break;
+
+
+                    case "Profesor":
+                        string queryProfesor = "SELECT ID_profesor, Count(ID_profesor) FROM CLIENTES " +
+                            "GROUP BY ID_profesor ORDER BY Count(ID_profesor) DESC";
+
+                        frmMenu.functGetStrategicData("Profesores", "Profesor", queryProfesor, "ID_profesor", "Cod_profesor", "Nombre", grdData);
+                    break;
+
+
+                    case "Sexo":
+                        string querySexo = "SELECT Sexo, Count(Sexo) FROM CLIENTES " +
+                        "GROUP BY Sexo ORDER BY Count(Sexo) DESC";
+                        conexionDB = new OleDbConnection(frmMenu.urlDB);
+                        conexionDB.Open();
+
+                        OleDbCommand comandoSexo = new OleDbCommand();
+                        comandoSexo.Connection = conexionDB;
+                        comandoSexo.CommandType = CommandType.TableDirect;
+
+                        grdData.Columns[0].HeaderText = "Sexo"; //changing the header from the first column
                         grdData.Columns[1].HeaderText = "Número de clientes"; //changing the header from the first column
 
-                        comandoClientes.CommandText = "SELECT ID_actividad, Count(ID_actividad) FROM CLIENTES " + //counting the number of barrios
-                            "GROUP BY ID_actividad ORDER BY Count(ID_actividad) DESC";
-                        OleDbDataReader readerClientes3 = comandoClientes.ExecuteReader();
+                        comandoSexo.CommandText = querySexo;
+                        OleDbDataReader readerClientes = comandoSexo.ExecuteReader();
 
-                        while (readerClientes3.Read())
+                        while (readerClientes.Read())
                         {
-                            string sucursal = "";
-                            OleDbCommand comandoActividades = new OleDbCommand();
-                            comandoActividades.Connection = conexionDB;
-                            comandoActividades.CommandType = CommandType.TableDirect;
-                            comandoActividades.CommandText = "Select * FROM Actividades";
-
-                            OleDbDataReader readerActividades = comandoActividades.ExecuteReader();
-
-                            while (readerActividades.Read())
-                            {
-
-                                if (int.Parse(readerActividades["Cod_actividad"].ToString()) == int.Parse(readerClientes3["ID_actividad"].ToString()))
-                                {
-                                    sucursal = readerActividades["Detalle"].ToString();
-                                }
-
-                            }
-
-                            readerActividades.Close();
-
-                            grdData.Rows.Add(sucursal, readerClientes3[1]); //name, counter
+                            grdData.Rows.Add(readerClientes[0].ToString(), readerClientes[1].ToString());
                         }
-
-                        readerClientes3.Close();
-
-                        break;
-                }
+                        readerClientes.Close();
+                     break;
+            }
 
                 conexionDB.Close();
-            }
-
-            catch
-            {
-                MessageBox.Show("Error en el mostrado de datos estratégicos");
-            }
         }
 
         private void cbInput_SelectedIndexChanged(object sender, EventArgs e)

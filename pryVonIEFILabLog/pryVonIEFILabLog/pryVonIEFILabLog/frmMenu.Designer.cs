@@ -37,15 +37,16 @@
             this.listadoDeClientesDeudoresToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.listadoDeClientesEnxActividadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.buscarOConsultarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.buscarClienteToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.consultaDeUnClienteToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultaDeDatosEstratégicosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarNuevosClientesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.actualizarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.consultaDeDatosEstratégicosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.eliminarClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.actualizarDeudaOActividadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.buscarSaldoClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -113,24 +114,18 @@
             // buscarOConsultarToolStripMenuItem
             // 
             this.buscarOConsultarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.buscarClienteToolStripMenuItem1,
-            this.consultaDeUnClienteToolStripMenuItem1,
+            this.buscarSaldoClienteToolStripMenuItem,
             this.consultaDeDatosEstratégicosToolStripMenuItem});
             this.buscarOConsultarToolStripMenuItem.Name = "buscarOConsultarToolStripMenuItem";
             this.buscarOConsultarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.buscarOConsultarToolStripMenuItem.Text = "Buscar o consultar";
             // 
-            // buscarClienteToolStripMenuItem1
+            // consultaDeDatosEstratégicosToolStripMenuItem
             // 
-            this.buscarClienteToolStripMenuItem1.Name = "buscarClienteToolStripMenuItem1";
-            this.buscarClienteToolStripMenuItem1.Size = new System.Drawing.Size(235, 22);
-            this.buscarClienteToolStripMenuItem1.Text = "Buscar cliente";
-            // 
-            // consultaDeUnClienteToolStripMenuItem1
-            // 
-            this.consultaDeUnClienteToolStripMenuItem1.Name = "consultaDeUnClienteToolStripMenuItem1";
-            this.consultaDeUnClienteToolStripMenuItem1.Size = new System.Drawing.Size(235, 22);
-            this.consultaDeUnClienteToolStripMenuItem1.Text = "Consulta de un cliente";
+            this.consultaDeDatosEstratégicosToolStripMenuItem.Name = "consultaDeDatosEstratégicosToolStripMenuItem";
+            this.consultaDeDatosEstratégicosToolStripMenuItem.Size = new System.Drawing.Size(235, 22);
+            this.consultaDeDatosEstratégicosToolStripMenuItem.Text = "Consulta de datos estratégicos";
+            this.consultaDeDatosEstratégicosToolStripMenuItem.Click += new System.EventHandler(this.consultaDeDatosEstratégicosToolStripMenuItem_Click);
             // 
             // agregarToolStripMenuItem
             // 
@@ -149,12 +144,16 @@
             // 
             // actualizarToolStripMenuItem
             // 
+            this.actualizarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.actualizarDeudaOActividadToolStripMenuItem});
             this.actualizarToolStripMenuItem.Name = "actualizarToolStripMenuItem";
             this.actualizarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.actualizarToolStripMenuItem.Text = "Actualizar";
             // 
             // eliminarToolStripMenuItem
             // 
+            this.eliminarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.eliminarClienteToolStripMenuItem});
             this.eliminarToolStripMenuItem.Name = "eliminarToolStripMenuItem";
             this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.eliminarToolStripMenuItem.Text = "Eliminar";
@@ -164,18 +163,31 @@
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
             this.salirToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
             this.salirToolStripMenuItem.Text = "Salir";
+            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // consultaDeDatosEstratégicosToolStripMenuItem
+            // eliminarClienteToolStripMenuItem
             // 
-            this.consultaDeDatosEstratégicosToolStripMenuItem.Name = "consultaDeDatosEstratégicosToolStripMenuItem";
-            this.consultaDeDatosEstratégicosToolStripMenuItem.Size = new System.Drawing.Size(235, 22);
-            this.consultaDeDatosEstratégicosToolStripMenuItem.Text = "Consulta de datos estratégicos";
-            this.consultaDeDatosEstratégicosToolStripMenuItem.Click += new System.EventHandler(this.consultaDeDatosEstratégicosToolStripMenuItem_Click);
+            this.eliminarClienteToolStripMenuItem.Name = "eliminarClienteToolStripMenuItem";
+            this.eliminarClienteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.eliminarClienteToolStripMenuItem.Text = "Eliminar cliente";
+            // 
+            // actualizarDeudaOActividadToolStripMenuItem
+            // 
+            this.actualizarDeudaOActividadToolStripMenuItem.Name = "actualizarDeudaOActividadToolStripMenuItem";
+            this.actualizarDeudaOActividadToolStripMenuItem.Size = new System.Drawing.Size(223, 22);
+            this.actualizarDeudaOActividadToolStripMenuItem.Text = "Actualizar deuda o actividad";
+            // 
+            // buscarSaldoClienteToolStripMenuItem
+            // 
+            this.buscarSaldoClienteToolStripMenuItem.Name = "buscarSaldoClienteToolStripMenuItem";
+            this.buscarSaldoClienteToolStripMenuItem.Size = new System.Drawing.Size(235, 22);
+            this.buscarSaldoClienteToolStripMenuItem.Text = "Buscar saldo cliente";
+            this.buscarSaldoClienteToolStripMenuItem.Click += new System.EventHandler(this.buscarSaldoClienteToolStripMenuItem_Click);
             // 
             // frmMenu
             // 
@@ -205,13 +217,14 @@
         private System.Windows.Forms.ToolStripMenuItem listadoDeTodosLosClientesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listadoDeClientesDeudoresToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem buscarOConsultarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem buscarClienteToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem consultaDeUnClienteToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem agregarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem agregarNuevosClientesToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem actualizarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eliminarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listadoDeClientesEnxActividadToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultaDeDatosEstratégicosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem actualizarDeudaOActividadToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem eliminarClienteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem buscarSaldoClienteToolStripMenuItem;
     }
 }

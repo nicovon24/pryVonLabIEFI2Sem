@@ -46,7 +46,7 @@
             // 
             // btnBorrar
             // 
-            this.btnBorrar.Location = new System.Drawing.Point(359, 292);
+            this.btnBorrar.Location = new System.Drawing.Point(341, 283);
             this.btnBorrar.Name = "btnBorrar";
             this.btnBorrar.Size = new System.Drawing.Size(86, 45);
             this.btnBorrar.TabIndex = 42;
@@ -56,7 +56,7 @@
             // 
             // btnVolver
             // 
-            this.btnVolver.Location = new System.Drawing.Point(359, 356);
+            this.btnVolver.Location = new System.Drawing.Point(341, 347);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(86, 45);
             this.btnVolver.TabIndex = 41;
@@ -66,11 +66,11 @@
             // 
             // btnMostrar
             // 
-            this.btnMostrar.Location = new System.Drawing.Point(473, 292);
+            this.btnMostrar.Location = new System.Drawing.Point(455, 283);
             this.btnMostrar.Name = "btnMostrar";
             this.btnMostrar.Size = new System.Drawing.Size(86, 45);
             this.btnMostrar.TabIndex = 40;
-            this.btnMostrar.Text = "Mostar";
+            this.btnMostrar.Text = "Mostrar";
             this.btnMostrar.UseVisualStyleBackColor = true;
             this.btnMostrar.Click += new System.EventHandler(this.btnMostrar_Click);
             // 
@@ -82,7 +82,7 @@
             this.colDNI,
             this.colNombre,
             this.colDeuda});
-            this.grdListaDeudores.Location = new System.Drawing.Point(30, 30);
+            this.grdListaDeudores.Location = new System.Drawing.Point(12, 21);
             this.grdListaDeudores.Name = "grdListaDeudores";
             this.grdListaDeudores.Size = new System.Drawing.Size(529, 245);
             this.grdListaDeudores.TabIndex = 39;
@@ -105,7 +105,7 @@
             // lblCantClientesRes
             // 
             this.lblCantClientesRes.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblCantClientesRes.Location = new System.Drawing.Point(164, 376);
+            this.lblCantClientesRes.Location = new System.Drawing.Point(151, 323);
             this.lblCantClientesRes.Name = "lblCantClientesRes";
             this.lblCantClientesRes.Size = new System.Drawing.Size(143, 21);
             this.lblCantClientesRes.TabIndex = 49;
@@ -114,7 +114,7 @@
             // lblPromDeudaRes
             // 
             this.lblPromDeudaRes.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblPromDeudaRes.Location = new System.Drawing.Point(164, 328);
+            this.lblPromDeudaRes.Location = new System.Drawing.Point(151, 373);
             this.lblPromDeudaRes.Name = "lblPromDeudaRes";
             this.lblPromDeudaRes.Size = new System.Drawing.Size(141, 23);
             this.lblPromDeudaRes.TabIndex = 48;
@@ -123,7 +123,7 @@
             // lblTotalDeudaRes
             // 
             this.lblTotalDeudaRes.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblTotalDeudaRes.Location = new System.Drawing.Point(164, 289);
+            this.lblTotalDeudaRes.Location = new System.Drawing.Point(151, 284);
             this.lblTotalDeudaRes.Name = "lblTotalDeudaRes";
             this.lblTotalDeudaRes.Size = new System.Drawing.Size(141, 23);
             this.lblTotalDeudaRes.TabIndex = 47;
@@ -131,31 +131,30 @@
             // 
             // lblCantClientes
             // 
-            this.lblCantClientes.AutoSize = true;
-            this.lblCantClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCantClientes.Location = new System.Drawing.Point(25, 382);
+            this.lblCantClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCantClientes.Location = new System.Drawing.Point(7, 325);
             this.lblCantClientes.Name = "lblCantClientes";
-            this.lblCantClientes.Size = new System.Drawing.Size(129, 16);
+            this.lblCantClientes.Size = new System.Drawing.Size(129, 37);
             this.lblCantClientes.TabIndex = 45;
-            this.lblCantClientes.Text = "Cantidad de clientes";
+            this.lblCantClientes.Text = "Cantidad de clientes deudores\r\n";
             // 
             // lblPromDeuda
             // 
             this.lblPromDeuda.AutoSize = true;
-            this.lblPromDeuda.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPromDeuda.Location = new System.Drawing.Point(27, 335);
+            this.lblPromDeuda.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPromDeuda.Location = new System.Drawing.Point(9, 376);
             this.lblPromDeuda.Name = "lblPromDeuda";
-            this.lblPromDeuda.Size = new System.Drawing.Size(127, 16);
+            this.lblPromDeuda.Size = new System.Drawing.Size(116, 15);
             this.lblPromDeuda.TabIndex = 46;
             this.lblPromDeuda.Text = "Promedio de deuda";
             // 
             // lblTotalDeuda
             // 
             this.lblTotalDeuda.AutoSize = true;
-            this.lblTotalDeuda.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalDeuda.Location = new System.Drawing.Point(27, 296);
+            this.lblTotalDeuda.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalDeuda.Location = new System.Drawing.Point(9, 287);
             this.lblTotalDeuda.Name = "lblTotalDeuda";
-            this.lblTotalDeuda.Size = new System.Drawing.Size(99, 16);
+            this.lblTotalDeuda.Size = new System.Drawing.Size(89, 15);
             this.lblTotalDeuda.TabIndex = 44;
             this.lblTotalDeuda.Text = "Total de deuda";
             // 

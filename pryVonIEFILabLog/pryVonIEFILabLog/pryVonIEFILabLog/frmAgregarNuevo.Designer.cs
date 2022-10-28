@@ -152,6 +152,7 @@
             this.txtTel.Name = "txtTel";
             this.txtTel.Size = new System.Drawing.Size(120, 20);
             this.txtTel.TabIndex = 27;
+            this.txtTel.TextChanged += new System.EventHandler(this.txtTel_TextChanged);
             this.txtTel.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTel_KeyPress);
             // 
             // txtDNI
@@ -195,7 +196,7 @@
             // 
             // btnVolver
             // 
-            this.btnVolver.Location = new System.Drawing.Point(19, 256);
+            this.btnVolver.Location = new System.Drawing.Point(18, 256);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(91, 45);
             this.btnVolver.TabIndex = 35;

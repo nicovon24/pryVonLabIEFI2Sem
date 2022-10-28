@@ -44,7 +44,7 @@ namespace pryVonIEFILabLog
                 OleDbCommand comando = new OleDbCommand();
                 comando.Connection = conexionDB;
                 comando.CommandType = CommandType.TableDirect;
-                comando.CommandText = "SELECT * FROM CLIENTES";
+                comando.CommandText = "SELECT * FROM Clientes WHERE Deuda>0";
                 OleDbDataReader reader = comando.ExecuteReader();
 
                 while (reader.Read())
@@ -52,12 +52,9 @@ namespace pryVonIEFILabLog
                     string deudaCliente = reader["Deuda"].ToString();
                     int dniCliente = int.Parse(reader["DNI"].ToString());
                     string nombreCliente = reader["Nombre y apellido"].ToString();
-                    if (int.Parse(deudaCliente) > 0)
-                    {
-                        grdListaDeudores.Rows.Add(dniCliente, nombreCliente, "$" + deudaCliente);
-                        totalDeuda += int.Parse(deudaCliente);
-                        counterClientes++;
-                    }
+                    grdListaDeudores.Rows.Add(dniCliente, nombreCliente, "$" + deudaCliente);
+                    totalDeuda += int.Parse(deudaCliente);
+                    counterClientes++;
                 }
 
                 reader.Close();

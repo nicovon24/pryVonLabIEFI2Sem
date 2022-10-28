@@ -128,6 +128,46 @@ namespace pryVonIEFILabLog
             return detalleResultado; //we return the id and store it in new variables
         }
 
+        public void functGetStrategicData(string table, string title, string query, string col_id, string col_cod, string col_detalle, DataGridView grd)
+        {
+            OleDbConnection conexionDB;
+            conexionDB = new OleDbConnection(urlDB);
+            conexionDB.Open();
+
+            OleDbCommand comandoClientes = new OleDbCommand();
+            comandoClientes.Connection = conexionDB;
+            comandoClientes.CommandType = CommandType.TableDirect;
+
+            grd.Columns[0].HeaderText = title; //changing the header from the first column
+            grd.Columns[1].HeaderText = "Número de clientes"; //changing the header from the first column
+
+            comandoClientes.CommandText = query;
+            OleDbDataReader readerClientes = comandoClientes.ExecuteReader();
+            while (readerClientes.Read())
+            {
+                string dataColCero = "";
+                OleDbCommand comandoBarrios = new OleDbCommand();
+                comandoBarrios.Connection = conexionDB;
+                comandoBarrios.CommandType = CommandType.TableDirect;
+                comandoBarrios.CommandText = "SELECT * FROM " + table;
+
+                OleDbDataReader reader = comandoBarrios.ExecuteReader();
+
+                while (reader.Read())
+                {
+
+                    if (int.Parse(reader[col_cod].ToString()) == int.Parse(readerClientes[col_id].ToString()))
+                    {
+                        dataColCero = reader[col_detalle].ToString();
+                    }
+
+                }
+
+                grd.Rows.Add(dataColCero, readerClientes[1]); //name of sucursal, counter
+            }
+            readerClientes.Close();
+        }
+
         public frmMenu()
         {
             InitializeComponent();
@@ -181,6 +221,19 @@ namespace pryVonIEFILabLog
         {
             this.Hide();
             frmConsultaDatosEstrategicos frmNew = new frmConsultaDatosEstrategicos();
+            frmNew.Show();
+        }
+
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            MessageBox.Show("See you!");
+        }
+
+        private void buscarSaldoClienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmBuscarSaldoCliente frmNew = new frmBuscarSaldoCliente();
             frmNew.Show();
         }
     }
