@@ -65,6 +65,10 @@ namespace pryVonIEFILabLog
                     MessageBox.Show("Error en el mostrado de saldo del client");
                 }
             }
+            else
+            {
+                MessageBox.Show("Ingrese algún dni por favor, recuerde que debe ser en formato número");
+            }
         }
 
         private void btnBorrar_Click(object sender, EventArgs e)
