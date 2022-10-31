@@ -70,7 +70,7 @@ inicio procedimiento agregarNuevo
                 fin mientras
 
                 mientras not add.profesores.eof y add.profesores.nombre==strProfesor
-                    idProfesor = int.Parse(add.profesores.cod_barrio)
+                    idProfesor = int.Parse(add.profesores.cod_profesor)
                     leer add.profesores
                 fin mientras
                 cerrar add.profesores
@@ -84,7 +84,7 @@ inicio procedimiento agregarNuevo
                 fin mientras
 
                 mientras not add.actividades.eof y add.actividades.detalle==strActividad
-                    idActividad = int.Parse(add.actividades.cod_barrio)
+                    idActividad = int.Parse(add.actividades.cod_actividad)
                     leer add.actividades
                 fin mientras
                 cerrar add.actividades
