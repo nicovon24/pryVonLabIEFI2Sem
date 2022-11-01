@@ -28,31 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtDNI = new System.Windows.Forms.TextBox();
-            this.lblMSG = new System.Windows.Forms.Label();
-            this.btnVolver = new System.Windows.Forms.Button();
-            this.lblDNI = new System.Windows.Forms.Label();
             this.bntEliminar = new System.Windows.Forms.Button();
+            this.lblDNI = new System.Windows.Forms.Label();
+            this.btnVolver = new System.Windows.Forms.Button();
+            this.lblMSG = new System.Windows.Forms.Label();
+            this.txtDNI = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // txtDNI
+            // bntEliminar
             // 
-            this.txtDNI.Location = new System.Drawing.Point(101, 85);
-            this.txtDNI.MaxLength = 8;
-            this.txtDNI.Name = "txtDNI";
-            this.txtDNI.Size = new System.Drawing.Size(133, 20);
-            this.txtDNI.TabIndex = 64;
-            this.txtDNI.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDNI_KeyPress);
+            this.bntEliminar.Location = new System.Drawing.Point(169, 136);
+            this.bntEliminar.Name = "bntEliminar";
+            this.bntEliminar.Size = new System.Drawing.Size(65, 32);
+            this.bntEliminar.TabIndex = 59;
+            this.bntEliminar.Text = "Eliminar";
+            this.bntEliminar.UseVisualStyleBackColor = true;
+            this.bntEliminar.Click += new System.EventHandler(this.bntEliminar_Click);
             // 
-            // lblMSG
+            // lblDNI
             // 
-            this.lblMSG.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblMSG.Location = new System.Drawing.Point(12, 9);
-            this.lblMSG.Name = "lblMSG";
-            this.lblMSG.Size = new System.Drawing.Size(222, 42);
-            this.lblMSG.TabIndex = 63;
-            this.lblMSG.Text = "Tipee el código de un cliente para actualizar su deuda, ejemplos de \r\nprueba: 333" +
-    "3, 21332132";
+            this.lblDNI.Location = new System.Drawing.Point(9, 88);
+            this.lblDNI.Name = "lblDNI";
+            this.lblDNI.Size = new System.Drawing.Size(86, 19);
+            this.lblDNI.TabIndex = 61;
+            this.lblDNI.Text = "DNI cliente\r\n";
             // 
             // btnVolver
             // 
@@ -64,23 +63,24 @@
             this.btnVolver.UseVisualStyleBackColor = true;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
-            // lblDNI
+            // lblMSG
             // 
-            this.lblDNI.Location = new System.Drawing.Point(9, 88);
-            this.lblDNI.Name = "lblDNI";
-            this.lblDNI.Size = new System.Drawing.Size(86, 19);
-            this.lblDNI.TabIndex = 61;
-            this.lblDNI.Text = "DNI cliente\r\n";
+            this.lblMSG.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblMSG.Location = new System.Drawing.Point(12, 9);
+            this.lblMSG.Name = "lblMSG";
+            this.lblMSG.Size = new System.Drawing.Size(222, 73);
+            this.lblMSG.TabIndex = 63;
+            this.lblMSG.Text = "Tipee el código de un cliente para actualizar su deuda, ejemplos de \r\nprueba: 444" +
+    "4, y números entre el rango 10000 y 10011";
             // 
-            // bntEliminar
+            // txtDNI
             // 
-            this.bntEliminar.Location = new System.Drawing.Point(169, 136);
-            this.bntEliminar.Name = "bntEliminar";
-            this.bntEliminar.Size = new System.Drawing.Size(65, 32);
-            this.bntEliminar.TabIndex = 59;
-            this.bntEliminar.Text = "Eliminar";
-            this.bntEliminar.UseVisualStyleBackColor = true;
-            this.bntEliminar.Click += new System.EventHandler(this.bntEliminar_Click);
+            this.txtDNI.Location = new System.Drawing.Point(101, 85);
+            this.txtDNI.MaxLength = 8;
+            this.txtDNI.Name = "txtDNI";
+            this.txtDNI.Size = new System.Drawing.Size(133, 20);
+            this.txtDNI.TabIndex = 64;
+            this.txtDNI.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDNI_KeyPress);
             // 
             // frmEliminarCliente
             // 
@@ -101,10 +101,10 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox txtDNI;
-        private System.Windows.Forms.Label lblMSG;
-        private System.Windows.Forms.Button btnVolver;
-        private System.Windows.Forms.Label lblDNI;
         private System.Windows.Forms.Button bntEliminar;
+        private System.Windows.Forms.Label lblDNI;
+        private System.Windows.Forms.Button btnVolver;
+        private System.Windows.Forms.Label lblMSG;
+        private System.Windows.Forms.TextBox txtDNI;
     }
 }

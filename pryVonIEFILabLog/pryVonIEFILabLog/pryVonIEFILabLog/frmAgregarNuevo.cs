@@ -49,8 +49,6 @@ namespace pryVonIEFILabLog
                 if (txtEmail.Text.Contains("@gmail.com") == true || txtEmail.Text.Contains("@outlook.com")==true
                 || txtEmail.Text.Contains("@hotmail.com") == true)
                 {
-
-
                     try
                     {
                         //getting the ids from these columns
@@ -84,6 +82,18 @@ namespace pryVonIEFILabLog
                         comando.ExecuteNonQuery();
                         MessageBox.Show("Dato cargado");
                         dbConnection.Close();
+
+                        cbActividad.Text = "";
+                        cbBarrio.Text = "";
+                        cbProfesor.Text = "";
+                        cbSexo.Text = "";
+                        cbSucursal.Text = "";
+                        txtDNI.Text = "";
+                        txtEmail.Text = "";
+                        txtNombre.Text = "";
+                        txtTel.Text = "";
+                        nudDeuda.Value = 0;
+                        txtDNI.Focus();
                     }
 
                     catch
@@ -121,9 +131,20 @@ namespace pryVonIEFILabLog
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
 
-        private void txtTel_TextChanged(object sender, EventArgs e)
+        //txtNombre only accepts letters, does not other characters like # or nums
+        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
         {
+            int ascci = Convert.ToInt32(Convert.ToChar(e.KeyChar));
 
+            if (ascci >= 65 && ascci <= 90 || ascci >= 97 && ascci <= 122)
+            {
+                e.Handled = false;
+            }
+
+            else
+            {
+                e.Handled = true;
+            }
         }
     }
 }

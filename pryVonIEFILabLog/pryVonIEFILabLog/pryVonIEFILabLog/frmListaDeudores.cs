@@ -44,7 +44,7 @@ namespace pryVonIEFILabLog
                 OleDbCommand comando = new OleDbCommand();
                 comando.Connection = conexionDB;
                 comando.CommandType = CommandType.TableDirect;
-                comando.CommandText = "SELECT * FROM Clientes WHERE Deuda>0";
+                comando.CommandText = "SELECT * FROM Clientes WHERE Deuda>0 ORDER BY Dni";
                 OleDbDataReader reader = comando.ExecuteReader();
 
                 while (reader.Read())

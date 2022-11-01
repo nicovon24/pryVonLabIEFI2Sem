@@ -78,6 +78,7 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(120, 20);
             this.txtNombre.TabIndex = 7;
+            this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // nudDeuda
             // 
@@ -152,7 +153,6 @@
             this.txtTel.Name = "txtTel";
             this.txtTel.Size = new System.Drawing.Size(120, 20);
             this.txtTel.TabIndex = 27;
-            this.txtTel.TextChanged += new System.EventHandler(this.txtTel_TextChanged);
             this.txtTel.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTel_KeyPress);
             // 
             // txtDNI

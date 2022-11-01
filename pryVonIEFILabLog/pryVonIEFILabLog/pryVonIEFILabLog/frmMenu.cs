@@ -36,7 +36,7 @@ namespace pryVonIEFILabLog
 
                 command.Connection = conexionDB;
                 command.CommandType = CommandType.TableDirect;
-                command.CommandText = "SELECT * FROM " + table;
+                command.CommandText = "SELECT * FROM " + table + " ORDER BY " + column;
 
                 OleDbDataReader reader = command.ExecuteReader();
 

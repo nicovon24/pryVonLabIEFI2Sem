@@ -175,7 +175,7 @@
             // eliminarClienteToolStripMenuItem
             // 
             this.eliminarClienteToolStripMenuItem.Name = "eliminarClienteToolStripMenuItem";
-            this.eliminarClienteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.eliminarClienteToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.eliminarClienteToolStripMenuItem.Text = "Eliminar cliente";
             this.eliminarClienteToolStripMenuItem.Click += new System.EventHandler(this.eliminarClienteToolStripMenuItem_Click);
             // 
@@ -199,7 +199,7 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmMenu";
-            this.Text = "frmMenu";
+            this.Text = "Menu";
             this.Load += new System.EventHandler(this.frmMenu_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
