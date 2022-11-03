@@ -131,11 +131,12 @@ namespace pryVonIEFILabLog
                 e.Graphics.DrawString("Clientes", font_title, Brushes.Black, 50, y - 35);
 
                 e.Graphics.DrawString("DNI", font_headers, Brushes.Black, 50, y - 15);
-                e.Graphics.DrawString("Nombre y apellido", font_headers, Brushes.Black, 150, y - 15);
+                e.Graphics.DrawString("Nombre y apellido", font_headers, Brushes.Black, 150, y - 15); 
 
                 //report table´s content
                 while (readerClientes.Read())
                 {
+                    //adding data: content, font, color, position in eje x, position in eje y
                     e.Graphics.DrawString(readerClientes["DNI"].ToString(), font_normal, Brushes.Black, 50, y);
                     e.Graphics.DrawString(readerClientes["Nombre y apellido"].ToString(), font_normal, Brushes.Black, 150, y);
                     y += 15;
