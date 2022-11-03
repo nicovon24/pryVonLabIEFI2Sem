@@ -51,6 +51,7 @@ namespace pryVonIEFILabLog
                 comando.CommandText = "SELECT * FROM Clientes ORDER BY Dni";
                 OleDbDataReader reader = comando.ExecuteReader();
 
+                //transformo los id_profesor, id_barrio en strings en la grilla
                 while (reader.Read())
                 {
                     string strBarrio = frmMenu.functTransformIDIntoString("Barrios", "Cod_barrio", "Detalle", int.Parse(reader["ID_barrio"].ToString()));

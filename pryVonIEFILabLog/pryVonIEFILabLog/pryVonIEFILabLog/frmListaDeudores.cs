@@ -25,6 +25,7 @@ namespace pryVonIEFILabLog
         private void frmListaDeudores_Load(object sender, EventArgs e)
         {
 
+
         }
 
         private void btnMostrar_Click(object sender, EventArgs e)

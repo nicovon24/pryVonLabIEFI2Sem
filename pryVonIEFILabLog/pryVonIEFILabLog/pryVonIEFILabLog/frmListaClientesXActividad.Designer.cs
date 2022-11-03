@@ -31,11 +31,15 @@
             this.lblActividad = new System.Windows.Forms.Label();
             this.cbActividad = new System.Windows.Forms.ComboBox();
             this.grdListaClientes = new System.Windows.Forms.DataGridView();
+            this.colDNI = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnVolver = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnBorrar = new System.Windows.Forms.Button();
-            this.colDNI = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnImprimir = new System.Windows.Forms.Button();
+            this.btnGenerar = new System.Windows.Forms.Button();
+            this.prtVentana = new System.Windows.Forms.PrintDialog();
+            this.prtDocument = new System.Drawing.Printing.PrintDocument();
             ((System.ComponentModel.ISupportInitialize)(this.grdListaClientes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -68,6 +72,16 @@
             this.grdListaClientes.Size = new System.Drawing.Size(506, 245);
             this.grdListaClientes.TabIndex = 2;
             // 
+            // colDNI
+            // 
+            this.colDNI.HeaderText = "DNI";
+            this.colDNI.Name = "colDNI";
+            // 
+            // colNombre
+            // 
+            this.colNombre.HeaderText = "Nombre";
+            this.colNombre.Name = "colNombre";
+            // 
             // btnVolver
             // 
             this.btnVolver.Location = new System.Drawing.Point(23, 361);
@@ -98,21 +112,36 @@
             this.btnBorrar.UseVisualStyleBackColor = true;
             this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
             // 
-            // colDNI
+            // btnImprimir
             // 
-            this.colDNI.HeaderText = "DNI";
-            this.colDNI.Name = "colDNI";
+            this.btnImprimir.Location = new System.Drawing.Point(238, 453);
+            this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.Size = new System.Drawing.Size(86, 45);
+            this.btnImprimir.TabIndex = 39;
+            this.btnImprimir.Text = "Imprimir reporte";
+            this.btnImprimir.UseVisualStyleBackColor = true;
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
             // 
-            // colNombre
+            // btnGenerar
             // 
-            this.colNombre.HeaderText = "Nombre";
-            this.colNombre.Name = "colNombre";
+            this.btnGenerar.Location = new System.Drawing.Point(445, 453);
+            this.btnGenerar.Name = "btnGenerar";
+            this.btnGenerar.Size = new System.Drawing.Size(86, 45);
+            this.btnGenerar.TabIndex = 40;
+            this.btnGenerar.Text = "Generar reporte";
+            this.btnGenerar.UseVisualStyleBackColor = true;
+            // 
+            // prtVentana
+            // 
+            this.prtVentana.UseEXDialog = true;
             // 
             // frmListaActividad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(585, 442);
+            this.ClientSize = new System.Drawing.Size(585, 534);
+            this.Controls.Add(this.btnGenerar);
+            this.Controls.Add(this.btnImprimir);
             this.Controls.Add(this.btnBorrar);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.btnBuscar);
@@ -138,5 +167,9 @@
         private System.Windows.Forms.Button btnBorrar;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDNI;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNombre;
+        private System.Windows.Forms.Button btnImprimir;
+        private System.Windows.Forms.Button btnGenerar;
+        private System.Windows.Forms.PrintDialog prtVentana;
+        private System.Drawing.Printing.PrintDocument prtDocument;
     }
 }

@@ -1,26 +1,30 @@
-inicio procedimiento listaDeudores
+inicio programa
 
-    grd[0][0]="DNI"
-    grd[0][1]="Nombre"
-    grd[0][2]="Deuda"
+    inicio procedimiento listaDeudores
 
-    int fg = 1
+        grd[0][0]="DNI"
+        grd[0][1]="Nombre"
+        grd[0][2]="Deuda"
 
-    leer y abrir add.clientes
+        int fg = 1
 
-    mientras not add.clientes.eof
+        leer y abrir add.clientes
 
-        si(add.clientes.deuda>0)
-            //---agrego a grilla---
-            grd[fg][0]=add.clientes.dni
-            grd[fg][1]=add.clientes.nombre
-            grd[fg][2]=add.clientes.deuda
-            fg++
-            
-        fin si
+        mientras not add.clientes.eof
 
-    fin mientras
+            si(add.clientes.deuda>0)
+                //---agrego a grilla---
+                grd[fg][0]=add.clientes.dni
+                grd[fg][1]=add.clientes.nombre
+                grd[fg][2]=add.clientes.deuda
+                fg++
+                
+            fin si
 
-    cerrar add.clientes
+        fin mientras
 
-fin procedimiento
+        cerrar add.clientes
+
+    fin procedimiento
+
+fin programa

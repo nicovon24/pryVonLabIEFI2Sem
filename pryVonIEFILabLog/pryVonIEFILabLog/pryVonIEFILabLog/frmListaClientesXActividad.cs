@@ -93,5 +93,9 @@ namespace pryVonIEFILabLog
             frmMenu frmMenu = new frmMenu();
             frmMenu.Show();
         }
+
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+        }
     }
 }
