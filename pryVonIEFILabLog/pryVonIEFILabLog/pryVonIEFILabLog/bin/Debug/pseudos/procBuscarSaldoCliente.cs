@@ -16,7 +16,7 @@ inicio programa
             fin mientras
 
             si(add.clientes.eof){
-                msg("No se ha encontrado a dicho cliente en la base de datos")
+                lblDeuda.Text = "No se ha encontrado a dicho cliente en la base de datos"
             }
 
             cerrar add.clientes

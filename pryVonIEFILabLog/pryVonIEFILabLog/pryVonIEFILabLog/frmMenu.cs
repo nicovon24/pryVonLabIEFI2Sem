@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.OleDb;
-using System.Drawing;
 using System.Linq;
 using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Drawing;
+using System.Drawing.Printing;
+using System.Collections;
 
 namespace pryVonIEFILabLog
 {
@@ -173,6 +175,12 @@ namespace pryVonIEFILabLog
             readerClientes.Close();
             conexionDB.Close();
         }
+
+        public void Imprimir(PrintPageEventArgs reporte, string table, string col_1, string col_2, string col_3, string cb)
+        {
+        }
+
+
 
         public frmMenu()
         {

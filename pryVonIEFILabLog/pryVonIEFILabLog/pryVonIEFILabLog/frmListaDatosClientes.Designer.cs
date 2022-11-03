@@ -41,6 +41,9 @@
             this.btnBorrar = new System.Windows.Forms.Button();
             this.lblTotalClientesRes = new System.Windows.Forms.Label();
             this.lblTotalClientes = new System.Windows.Forms.Label();
+            this.btnGenerar = new System.Windows.Forms.Button();
+            this.prtVentana = new System.Windows.Forms.PrintDialog();
+            this.prtDocument = new System.Drawing.Printing.PrintDocument();
             ((System.ComponentModel.ISupportInitialize)(this.grdClientes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -138,11 +141,30 @@
             this.lblTotalClientes.TabIndex = 40;
             this.lblTotalClientes.Text = "Total de clientes";
             // 
+            // btnGenerar
+            // 
+            this.btnGenerar.Location = new System.Drawing.Point(576, 398);
+            this.btnGenerar.Name = "btnGenerar";
+            this.btnGenerar.Size = new System.Drawing.Size(86, 45);
+            this.btnGenerar.TabIndex = 41;
+            this.btnGenerar.Text = "Generar reporte";
+            this.btnGenerar.UseVisualStyleBackColor = true;
+            this.btnGenerar.Click += new System.EventHandler(this.btnGenerar_Click);
+            // 
+            // prtVentana
+            // 
+            this.prtVentana.UseEXDialog = true;
+            // 
+            // prtDocument
+            // 
+            this.prtDocument.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.prtDocument_PrintPage);
+            // 
             // frmListaDatosClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(684, 388);
+            this.ClientSize = new System.Drawing.Size(684, 467);
+            this.Controls.Add(this.btnGenerar);
             this.Controls.Add(this.lblTotalClientes);
             this.Controls.Add(this.lblTotalClientesRes);
             this.Controls.Add(this.btnBorrar);
@@ -173,5 +195,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colActividad;
         private System.Windows.Forms.Label lblTotalClientesRes;
         private System.Windows.Forms.Label lblTotalClientes;
+        private System.Windows.Forms.Button btnGenerar;
+        private System.Windows.Forms.PrintDialog prtVentana;
+        private System.Drawing.Printing.PrintDocument prtDocument;
     }
 }

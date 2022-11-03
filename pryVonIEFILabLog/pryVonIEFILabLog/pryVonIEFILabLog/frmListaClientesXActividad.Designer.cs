@@ -36,10 +36,10 @@
             this.btnVolver = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnBorrar = new System.Windows.Forms.Button();
-            this.btnImprimir = new System.Windows.Forms.Button();
             this.btnGenerar = new System.Windows.Forms.Button();
             this.prtVentana = new System.Windows.Forms.PrintDialog();
             this.prtDocument = new System.Drawing.Printing.PrintDocument();
+            this.printDialog1 = new System.Windows.Forms.PrintDialog();
             ((System.ComponentModel.ISupportInitialize)(this.grdListaClientes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -112,16 +112,6 @@
             this.btnBorrar.UseVisualStyleBackColor = true;
             this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
             // 
-            // btnImprimir
-            // 
-            this.btnImprimir.Location = new System.Drawing.Point(238, 453);
-            this.btnImprimir.Name = "btnImprimir";
-            this.btnImprimir.Size = new System.Drawing.Size(86, 45);
-            this.btnImprimir.TabIndex = 39;
-            this.btnImprimir.Text = "Imprimir reporte";
-            this.btnImprimir.UseVisualStyleBackColor = true;
-            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
-            // 
             // btnGenerar
             // 
             this.btnGenerar.Location = new System.Drawing.Point(445, 453);
@@ -130,10 +120,19 @@
             this.btnGenerar.TabIndex = 40;
             this.btnGenerar.Text = "Generar reporte";
             this.btnGenerar.UseVisualStyleBackColor = true;
+            this.btnGenerar.Click += new System.EventHandler(this.btnGenerar_Click);
             // 
             // prtVentana
             // 
             this.prtVentana.UseEXDialog = true;
+            // 
+            // prtDocument
+            // 
+            this.prtDocument.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.prtDocument_PrintPage);
+            // 
+            // printDialog1
+            // 
+            this.printDialog1.UseEXDialog = true;
             // 
             // frmListaActividad
             // 
@@ -141,7 +140,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(585, 534);
             this.Controls.Add(this.btnGenerar);
-            this.Controls.Add(this.btnImprimir);
             this.Controls.Add(this.btnBorrar);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.btnBuscar);
@@ -167,9 +165,9 @@
         private System.Windows.Forms.Button btnBorrar;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDNI;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNombre;
-        private System.Windows.Forms.Button btnImprimir;
         private System.Windows.Forms.Button btnGenerar;
         private System.Windows.Forms.PrintDialog prtVentana;
         private System.Drawing.Printing.PrintDocument prtDocument;
+        private System.Windows.Forms.PrintDialog printDialog1;
     }
 }

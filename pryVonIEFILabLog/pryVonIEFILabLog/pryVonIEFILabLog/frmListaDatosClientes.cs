@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.Common;
 using System.Data.OleDb;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Security.Policy;
 using System.Text;
@@ -90,6 +91,62 @@ namespace pryVonIEFILabLog
             btnMostrar.Enabled = true;
             btnBorrar.Enabled = false;
             lblTotalClientesRes.Text = "";
+        }
+
+        //each time we presses this button, shows the print screen
+        private void btnGenerar_Click(object sender, EventArgs e)
+        {
+            //prtVentana: window that appear when we click on btnPrint
+            prtVentana.ShowDialog();
+
+            //prtDocument: defines and styles the document we want to print
+            prtDocument.PrinterSettings = new PrinterSettings(); //assingning printer to the document
+            prtDocument.Print();
+            MessageBox.Show("Document printed successfully!");
+        }
+
+        private void prtDocument_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            try
+            {
+                //seaching the activity id
+                OleDbConnection conexionDB;
+                conexionDB = new OleDbConnection(frmMenu.urlDB);
+                conexionDB.Open();
+
+                OleDbCommand comandoClientes = new OleDbCommand();
+                comandoClientes.Connection = conexionDB;
+                comandoClientes.CommandType = CommandType.TableDirect;
+
+                comandoClientes.CommandText = "Clientes";
+                OleDbDataReader readerClientes = comandoClientes.ExecuteReader();
+
+                Font font_title = new Font("Arial", 12, FontStyle.Underline); //font of the report
+                Font font_headers = new Font("Arial", 10, FontStyle.Bold); //font of the report
+                Font font_normal = new Font("Arial", 10); //font of the report
+                int y = 100; //eje y position, each time the reader renders a data, we increase the y value so
+                             //data will be always below in the docs
+
+                //headers of each report´s column
+                e.Graphics.DrawString("Clientes", font_title, Brushes.Black, 50, y - 35);
+
+                e.Graphics.DrawString("DNI", font_headers, Brushes.Black, 50, y - 15);
+                e.Graphics.DrawString("Nombre y apellido", font_headers, Brushes.Black, 150, y - 15);
+
+                //report table´s content
+                while (readerClientes.Read())
+                {
+                    e.Graphics.DrawString(readerClientes["DNI"].ToString(), font_normal, Brushes.Black, 50, y);
+                    e.Graphics.DrawString(readerClientes["Nombre y apellido"].ToString(), font_normal, Brushes.Black, 150, y);
+                    y += 15;
+                }
+                readerClientes.Close();
+                conexionDB.Close();
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show("Error en la generación del reporte.");
+            }
         }
     }
 }

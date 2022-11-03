@@ -5,10 +5,8 @@ inicio programa
         //numerica
         int dni = parseInt(txtDNI.text)
         int deuda = parseInt(txtDeuda.text)
-        //banderas
-        bool flagEstaCodEnClientes = false
 
-        //---me fijo si esta el codigo en clientes---
+        //---busco el dni, si no está muestro msg---
         abrir y leer add.clientes
         mientras not add.clientes.eof y add.clientes.DNI<>dni
             leer add.clientes
