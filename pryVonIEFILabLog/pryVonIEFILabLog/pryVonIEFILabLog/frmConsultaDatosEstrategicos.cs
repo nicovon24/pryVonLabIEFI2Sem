@@ -127,5 +127,9 @@ namespace pryVonIEFILabLog
         {
 
         }
+
+        private void btnMostrar_MouseHover(object sender, EventArgs e)
+        {
+        }
     }
 }

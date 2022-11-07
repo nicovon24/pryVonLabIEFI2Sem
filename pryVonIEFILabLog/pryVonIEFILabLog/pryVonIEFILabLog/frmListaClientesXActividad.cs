@@ -194,5 +194,9 @@ namespace pryVonIEFILabLog
                 MessageBox.Show("Choose an option, please");
             }
         }
+
+        private void btnBuscar_MouseClick(object sender, MouseEventArgs e)
+        {
+        }
     }
 }

@@ -103,6 +103,7 @@
             this.btnMostrar.Text = "Mostrar";
             this.btnMostrar.UseVisualStyleBackColor = true;
             this.btnMostrar.Click += new System.EventHandler(this.btnMostrar_Click);
+            this.btnMostrar.MouseHover += new System.EventHandler(this.btnMostrar_MouseHover);
             // 
             // btnVolver
             // 
@@ -126,7 +127,7 @@
             this.Controls.Add(this.lblMSG);
             this.Controls.Add(this.cbInput);
             this.Name = "frmConsultaDatosEstrategicos";
-            this.Text = "Consulta de DatosEstrategicos";
+            this.Text = "v";
             this.Load += new System.EventHandler(this.frmConsultaDatosEstrategicos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grdData)).EndInit();
             this.ResumeLayout(false);
