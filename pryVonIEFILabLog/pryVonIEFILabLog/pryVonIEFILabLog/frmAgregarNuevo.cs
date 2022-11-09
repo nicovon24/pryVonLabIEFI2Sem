@@ -46,7 +46,7 @@ namespace pryVonIEFILabLog
             if (cbActividad.Text != "" && cbBarrio.Text != "" && cbProfesor.Text != "" && cbSexo.Text != "" && cbSucursal.Text != ""
             && txtDNI.Text != "" && txtEmail.Text != "" && txtNombre.Text != "" && txtTel.Text != "" && nudDeuda.Value != 0)
             {
-                if (txtEmail.Text.Contains("@gmail.com") == true || txtEmail.Text.Contains("@outlook.com")==true
+                if (txtEmail.Text.Contains("@gmail.com") == true || txtEmail.Text.Contains("@outlook.com") == true
                 || txtEmail.Text.Contains("@hotmail.com") == true)
                 {
                     try
@@ -95,7 +95,7 @@ namespace pryVonIEFILabLog
                             commandAdd.Parameters.Add(new System.Data.OleDb.OleDbParameter("@sexo", cbSexo.Text));
                             commandAdd.Parameters.Add(new System.Data.OleDb.OleDbParameter("@barrio", cod_barrio));
                             commandAdd.Parameters.Add(new System.Data.OleDb.OleDbParameter("@sucursal", cod_sucursal));
-                            commandAdd.Parameters.Add(new System.Data.OleDb.OleDbParameter("@profesor", cod_profesor);
+                            commandAdd.Parameters.Add(new System.Data.OleDb.OleDbParameter("@profesor", cod_profesor));
                             commandAdd.Parameters.Add(new System.Data.OleDb.OleDbParameter("@actividad", cod_actividad));
                             commandAdd.Parameters.Add(new System.Data.OleDb.OleDbParameter("@telefono", txtTel.Text));
                             commandAdd.Parameters.Add(new System.Data.OleDb.OleDbParameter("email", txtEmail.Text));
@@ -131,7 +131,7 @@ namespace pryVonIEFILabLog
             {
                 MessageBox.Show("Faltan datos para agregar, completelos para poder realizar el agregado");
             }
-            
+
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
@@ -155,17 +155,23 @@ namespace pryVonIEFILabLog
         //txtNombre only accepts letters, does not other characters like # or nums
         private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
         {
-            int ascci = Convert.ToInt32(Convert.ToChar(e.KeyChar));
+            //NO ME DEJA BORRAR
+            //int ascci = Convert.ToInt32(Convert.ToChar(e.KeyChar));
 
-            if (ascci >= 65 && ascci <= 90 || ascci >= 97 && ascci <= 122)
-            {
-                e.Handled = false;
-            }
+            //if ((ascci >= 65 && ascci <= 90) || (ascci >= 97 && ascci <= 122) || (ascci == 127))
+            //{
+            //    e.Handled = false;
+            //}
 
-            else
-            {
-                e.Handled = true;
-            }
+            //else
+            //{
+            //    e.Handled = true;
+            //}
+        }
+
+        private void txtNombre_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
