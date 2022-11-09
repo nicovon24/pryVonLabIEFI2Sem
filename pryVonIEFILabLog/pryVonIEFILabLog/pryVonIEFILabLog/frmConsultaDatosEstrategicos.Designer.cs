@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmConsultaDatosEstrategicos));
             this.cbInput = new System.Windows.Forms.ComboBox();
             this.lblMSG = new System.Windows.Forms.Label();
             this.lblPromedio = new System.Windows.Forms.Label();
@@ -36,7 +37,11 @@
             this.colValor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnMostrar = new System.Windows.Forms.Button();
             this.btnVolver = new System.Windows.Forms.Button();
+            this.pctCrossfit = new System.Windows.Forms.PictureBox();
+            this.pctFB = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.grdData)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctCrossfit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctFB)).BeginInit();
             this.SuspendLayout();
             // 
             // cbInput
@@ -48,7 +53,7 @@
             "Actividad",
             "Profesor",
             "Sexo"});
-            this.cbInput.Location = new System.Drawing.Point(12, 88);
+            this.cbInput.Location = new System.Drawing.Point(12, 199);
             this.cbInput.Name = "cbInput";
             this.cbInput.Size = new System.Drawing.Size(154, 21);
             this.cbInput.TabIndex = 0;
@@ -56,8 +61,10 @@
             // 
             // lblMSG
             // 
+            this.lblMSG.BackColor = System.Drawing.Color.Black;
             this.lblMSG.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblMSG.Location = new System.Drawing.Point(12, 19);
+            this.lblMSG.ForeColor = System.Drawing.Color.White;
+            this.lblMSG.Location = new System.Drawing.Point(12, 117);
             this.lblMSG.Name = "lblMSG";
             this.lblMSG.Size = new System.Drawing.Size(358, 56);
             this.lblMSG.TabIndex = 1;
@@ -67,7 +74,7 @@
             // lblPromedio
             // 
             this.lblPromedio.AutoSize = true;
-            this.lblPromedio.Location = new System.Drawing.Point(12, 314);
+            this.lblPromedio.Location = new System.Drawing.Point(12, 468);
             this.lblPromedio.Name = "lblPromedio";
             this.lblPromedio.Size = new System.Drawing.Size(0, 13);
             this.lblPromedio.TabIndex = 2;
@@ -79,7 +86,7 @@
             this.grdData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colDato,
             this.colValor});
-            this.grdData.Location = new System.Drawing.Point(12, 139);
+            this.grdData.Location = new System.Drawing.Point(12, 250);
             this.grdData.Name = "grdData";
             this.grdData.Size = new System.Drawing.Size(358, 150);
             this.grdData.TabIndex = 41;
@@ -96,7 +103,7 @@
             // 
             // btnMostrar
             // 
-            this.btnMostrar.Location = new System.Drawing.Point(294, 314);
+            this.btnMostrar.Location = new System.Drawing.Point(294, 425);
             this.btnMostrar.Name = "btnMostrar";
             this.btnMostrar.Size = new System.Drawing.Size(76, 35);
             this.btnMostrar.TabIndex = 40;
@@ -107,7 +114,7 @@
             // 
             // btnVolver
             // 
-            this.btnVolver.Location = new System.Drawing.Point(12, 314);
+            this.btnVolver.Location = new System.Drawing.Point(12, 425);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(76, 35);
             this.btnVolver.TabIndex = 39;
@@ -115,11 +122,34 @@
             this.btnVolver.UseVisualStyleBackColor = true;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
+            // pctCrossfit
+            // 
+            this.pctCrossfit.Image = ((System.Drawing.Image)(resources.GetObject("pctCrossfit.Image")));
+            this.pctCrossfit.Location = new System.Drawing.Point(132, 10);
+            this.pctCrossfit.Name = "pctCrossfit";
+            this.pctCrossfit.Size = new System.Drawing.Size(92, 76);
+            this.pctCrossfit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pctCrossfit.TabIndex = 56;
+            this.pctCrossfit.TabStop = false;
+            // 
+            // pctFB
+            // 
+            this.pctFB.Image = ((System.Drawing.Image)(resources.GetObject("pctFB.Image")));
+            this.pctFB.Location = new System.Drawing.Point(12, 12);
+            this.pctFB.Name = "pctFB";
+            this.pctFB.Size = new System.Drawing.Size(95, 74);
+            this.pctFB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pctFB.TabIndex = 55;
+            this.pctFB.TabStop = false;
+            // 
             // frmConsultaDatosEstrategicos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(399, 379);
+            this.BackColor = System.Drawing.Color.Black;
+            this.ClientSize = new System.Drawing.Size(394, 494);
+            this.Controls.Add(this.pctCrossfit);
+            this.Controls.Add(this.pctFB);
             this.Controls.Add(this.grdData);
             this.Controls.Add(this.btnMostrar);
             this.Controls.Add(this.btnVolver);
@@ -130,6 +160,8 @@
             this.Text = "v";
             this.Load += new System.EventHandler(this.frmConsultaDatosEstrategicos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grdData)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctCrossfit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctFB)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -145,5 +177,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colValor;
         private System.Windows.Forms.Button btnMostrar;
         private System.Windows.Forms.Button btnVolver;
+        private System.Windows.Forms.PictureBox pctCrossfit;
+        private System.Windows.Forms.PictureBox pctFB;
     }
 }

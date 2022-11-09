@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmListaDeudores));
             this.btnBorrar = new System.Windows.Forms.Button();
             this.btnVolver = new System.Windows.Forms.Button();
             this.btnMostrar = new System.Windows.Forms.Button();
@@ -44,12 +45,17 @@
             this.btnGenerar = new System.Windows.Forms.Button();
             this.prtVentana = new System.Windows.Forms.PrintDialog();
             this.prtDocument = new System.Drawing.Printing.PrintDocument();
+            this.pctFB = new System.Windows.Forms.PictureBox();
+            this.pctCrossfit = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.grdListaDeudores)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctFB)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctCrossfit)).BeginInit();
             this.SuspendLayout();
             // 
             // btnBorrar
             // 
-            this.btnBorrar.Location = new System.Drawing.Point(341, 283);
+            this.btnBorrar.ForeColor = System.Drawing.Color.Black;
+            this.btnBorrar.Location = new System.Drawing.Point(341, 358);
             this.btnBorrar.Name = "btnBorrar";
             this.btnBorrar.Size = new System.Drawing.Size(86, 45);
             this.btnBorrar.TabIndex = 42;
@@ -59,7 +65,8 @@
             // 
             // btnVolver
             // 
-            this.btnVolver.Location = new System.Drawing.Point(341, 347);
+            this.btnVolver.ForeColor = System.Drawing.Color.Black;
+            this.btnVolver.Location = new System.Drawing.Point(341, 422);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(86, 45);
             this.btnVolver.TabIndex = 41;
@@ -69,7 +76,8 @@
             // 
             // btnMostrar
             // 
-            this.btnMostrar.Location = new System.Drawing.Point(455, 283);
+            this.btnMostrar.ForeColor = System.Drawing.Color.Black;
+            this.btnMostrar.Location = new System.Drawing.Point(455, 358);
             this.btnMostrar.Name = "btnMostrar";
             this.btnMostrar.Size = new System.Drawing.Size(86, 45);
             this.btnMostrar.TabIndex = 40;
@@ -85,7 +93,7 @@
             this.colDNI,
             this.colNombre,
             this.colDeuda});
-            this.grdListaDeudores.Location = new System.Drawing.Point(12, 21);
+            this.grdListaDeudores.Location = new System.Drawing.Point(12, 96);
             this.grdListaDeudores.Name = "grdListaDeudores";
             this.grdListaDeudores.Size = new System.Drawing.Size(529, 245);
             this.grdListaDeudores.TabIndex = 39;
@@ -107,35 +115,42 @@
             // 
             // lblCantClientesRes
             // 
+            this.lblCantClientesRes.BackColor = System.Drawing.Color.White;
             this.lblCantClientesRes.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblCantClientesRes.Location = new System.Drawing.Point(151, 323);
+            this.lblCantClientesRes.ForeColor = System.Drawing.Color.Black;
+            this.lblCantClientesRes.Location = new System.Drawing.Point(151, 400);
             this.lblCantClientesRes.Name = "lblCantClientesRes";
-            this.lblCantClientesRes.Size = new System.Drawing.Size(143, 21);
+            this.lblCantClientesRes.Size = new System.Drawing.Size(141, 21);
             this.lblCantClientesRes.TabIndex = 49;
             this.lblCantClientesRes.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblPromDeudaRes
             // 
+            this.lblPromDeudaRes.BackColor = System.Drawing.Color.White;
             this.lblPromDeudaRes.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblPromDeudaRes.Location = new System.Drawing.Point(151, 373);
+            this.lblPromDeudaRes.ForeColor = System.Drawing.Color.Black;
+            this.lblPromDeudaRes.Location = new System.Drawing.Point(151, 448);
             this.lblPromDeudaRes.Name = "lblPromDeudaRes";
-            this.lblPromDeudaRes.Size = new System.Drawing.Size(141, 23);
+            this.lblPromDeudaRes.Size = new System.Drawing.Size(141, 21);
             this.lblPromDeudaRes.TabIndex = 48;
             this.lblPromDeudaRes.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblTotalDeudaRes
             // 
+            this.lblTotalDeudaRes.BackColor = System.Drawing.Color.White;
             this.lblTotalDeudaRes.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblTotalDeudaRes.Location = new System.Drawing.Point(151, 284);
+            this.lblTotalDeudaRes.ForeColor = System.Drawing.Color.Black;
+            this.lblTotalDeudaRes.Location = new System.Drawing.Point(151, 359);
             this.lblTotalDeudaRes.Name = "lblTotalDeudaRes";
-            this.lblTotalDeudaRes.Size = new System.Drawing.Size(141, 23);
+            this.lblTotalDeudaRes.Size = new System.Drawing.Size(141, 21);
             this.lblTotalDeudaRes.TabIndex = 47;
             this.lblTotalDeudaRes.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblCantClientes
             // 
             this.lblCantClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCantClientes.Location = new System.Drawing.Point(7, 325);
+            this.lblCantClientes.ForeColor = System.Drawing.Color.White;
+            this.lblCantClientes.Location = new System.Drawing.Point(7, 400);
             this.lblCantClientes.Name = "lblCantClientes";
             this.lblCantClientes.Size = new System.Drawing.Size(129, 37);
             this.lblCantClientes.TabIndex = 45;
@@ -145,7 +160,8 @@
             // 
             this.lblPromDeuda.AutoSize = true;
             this.lblPromDeuda.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPromDeuda.Location = new System.Drawing.Point(9, 376);
+            this.lblPromDeuda.ForeColor = System.Drawing.Color.White;
+            this.lblPromDeuda.Location = new System.Drawing.Point(9, 451);
             this.lblPromDeuda.Name = "lblPromDeuda";
             this.lblPromDeuda.Size = new System.Drawing.Size(116, 15);
             this.lblPromDeuda.TabIndex = 46;
@@ -155,7 +171,8 @@
             // 
             this.lblTotalDeuda.AutoSize = true;
             this.lblTotalDeuda.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalDeuda.Location = new System.Drawing.Point(9, 287);
+            this.lblTotalDeuda.ForeColor = System.Drawing.Color.White;
+            this.lblTotalDeuda.Location = new System.Drawing.Point(9, 362);
             this.lblTotalDeuda.Name = "lblTotalDeuda";
             this.lblTotalDeuda.Size = new System.Drawing.Size(89, 15);
             this.lblTotalDeuda.TabIndex = 44;
@@ -163,7 +180,8 @@
             // 
             // btnGenerar
             // 
-            this.btnGenerar.Location = new System.Drawing.Point(455, 351);
+            this.btnGenerar.ForeColor = System.Drawing.Color.Black;
+            this.btnGenerar.Location = new System.Drawing.Point(455, 426);
             this.btnGenerar.Name = "btnGenerar";
             this.btnGenerar.Size = new System.Drawing.Size(86, 45);
             this.btnGenerar.TabIndex = 50;
@@ -179,11 +197,34 @@
             // 
             this.prtDocument.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.prtDocument_PrintPage);
             // 
+            // pctFB
+            // 
+            this.pctFB.Image = ((System.Drawing.Image)(resources.GetObject("pctFB.Image")));
+            this.pctFB.Location = new System.Drawing.Point(12, 14);
+            this.pctFB.Name = "pctFB";
+            this.pctFB.Size = new System.Drawing.Size(95, 74);
+            this.pctFB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pctFB.TabIndex = 51;
+            this.pctFB.TabStop = false;
+            // 
+            // pctCrossfit
+            // 
+            this.pctCrossfit.Image = ((System.Drawing.Image)(resources.GetObject("pctCrossfit.Image")));
+            this.pctCrossfit.Location = new System.Drawing.Point(132, 12);
+            this.pctCrossfit.Name = "pctCrossfit";
+            this.pctCrossfit.Size = new System.Drawing.Size(92, 76);
+            this.pctCrossfit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pctCrossfit.TabIndex = 52;
+            this.pctCrossfit.TabStop = false;
+            // 
             // frmListaDeudores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(571, 421);
+            this.BackColor = System.Drawing.Color.Black;
+            this.ClientSize = new System.Drawing.Size(571, 496);
+            this.Controls.Add(this.pctCrossfit);
+            this.Controls.Add(this.pctFB);
             this.Controls.Add(this.btnGenerar);
             this.Controls.Add(this.lblCantClientesRes);
             this.Controls.Add(this.lblPromDeudaRes);
@@ -195,10 +236,13 @@
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.btnMostrar);
             this.Controls.Add(this.grdListaDeudores);
+            this.ForeColor = System.Drawing.Color.Black;
             this.Name = "frmListaDeudores";
             this.Text = "Lista de deudores";
             this.Load += new System.EventHandler(this.frmListaDeudores_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grdListaDeudores)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctFB)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctCrossfit)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -222,5 +266,7 @@
         private System.Windows.Forms.Button btnGenerar;
         private System.Windows.Forms.PrintDialog prtVentana;
         private System.Drawing.Printing.PrintDocument prtDocument;
+        private System.Windows.Forms.PictureBox pctFB;
+        private System.Windows.Forms.PictureBox pctCrossfit;
     }
 }

@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMenu));
+            this.menuMain = new System.Windows.Forms.MenuStrip();
             this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mostrarListadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listadoDeTodosLosClientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -45,20 +45,26 @@
             this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eliminarClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.menuStrip1.SuspendLayout();
+            this.pctFB = new System.Windows.Forms.PictureBox();
+            this.pctCrossfit = new System.Windows.Forms.PictureBox();
+            this.bienvenidoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuMain.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pctFB)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctCrossfit)).BeginInit();
             this.SuspendLayout();
             // 
-            // menuStrip1
+            // menuMain
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuMain.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bienvenidoToolStripMenuItem,
             this.clientesToolStripMenuItem,
             this.salirToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(242, 24);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
+            this.menuMain.Location = new System.Drawing.Point(0, 0);
+            this.menuMain.Name = "menuMain";
+            this.menuMain.Size = new System.Drawing.Size(641, 24);
+            this.menuMain.TabIndex = 0;
+            this.menuMain.Text = "menuStrip1";
             // 
             // clientesToolStripMenuItem
             // 
@@ -79,7 +85,7 @@
             this.listadoDeClientesDeudoresToolStripMenuItem1,
             this.listadoDeClientesEnxActividadToolStripMenuItem});
             this.mostrarListadosToolStripMenuItem.Name = "mostrarListadosToolStripMenuItem";
-            this.mostrarListadosToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
+            this.mostrarListadosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.mostrarListadosToolStripMenuItem.Text = "Mostrar listados";
             // 
             // listadoDeTodosLosClientesToolStripMenuItem
@@ -109,7 +115,7 @@
             this.buscarSaldoClienteToolStripMenuItem,
             this.consultaDeDatosEstratégicosToolStripMenuItem});
             this.buscarOConsultarToolStripMenuItem.Name = "buscarOConsultarToolStripMenuItem";
-            this.buscarOConsultarToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
+            this.buscarOConsultarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.buscarOConsultarToolStripMenuItem.Text = "Buscar o consultar";
             // 
             // buscarSaldoClienteToolStripMenuItem
@@ -131,7 +137,7 @@
             this.agregarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.agregarNuevosClientesToolStripMenuItem1});
             this.agregarToolStripMenuItem.Name = "agregarToolStripMenuItem";
-            this.agregarToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
+            this.agregarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.agregarToolStripMenuItem.Text = "Agregar";
             // 
             // agregarNuevosClientesToolStripMenuItem1
@@ -146,7 +152,7 @@
             this.actualizarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.actualizarDeudaDeClienteToolStripMenuItem});
             this.actualizarToolStripMenuItem.Name = "actualizarToolStripMenuItem";
-            this.actualizarToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
+            this.actualizarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.actualizarToolStripMenuItem.Text = "Actualizar";
             // 
             // actualizarDeudaDeClienteToolStripMenuItem
@@ -161,13 +167,13 @@
             this.eliminarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.eliminarClienteToolStripMenuItem});
             this.eliminarToolStripMenuItem.Name = "eliminarToolStripMenuItem";
-            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
+            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.eliminarToolStripMenuItem.Text = "Eliminar";
             // 
             // eliminarClienteToolStripMenuItem
             // 
             this.eliminarClienteToolStripMenuItem.Name = "eliminarClienteToolStripMenuItem";
-            this.eliminarClienteToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
+            this.eliminarClienteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.eliminarClienteToolStripMenuItem.Text = "Eliminar cliente";
             this.eliminarClienteToolStripMenuItem.Click += new System.EventHandler(this.eliminarClienteToolStripMenuItem_Click);
             // 
@@ -178,23 +184,50 @@
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
-            // contextMenuStrip1
+            // pctFB
             // 
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            this.pctFB.Image = ((System.Drawing.Image)(resources.GetObject("pctFB.Image")));
+            this.pctFB.Location = new System.Drawing.Point(112, 160);
+            this.pctFB.Name = "pctFB";
+            this.pctFB.Size = new System.Drawing.Size(171, 166);
+            this.pctFB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pctFB.TabIndex = 2;
+            this.pctFB.TabStop = false;
+            // 
+            // pctCrossfit
+            // 
+            this.pctCrossfit.Image = ((System.Drawing.Image)(resources.GetObject("pctCrossfit.Image")));
+            this.pctCrossfit.Location = new System.Drawing.Point(382, 160);
+            this.pctCrossfit.Name = "pctCrossfit";
+            this.pctCrossfit.Size = new System.Drawing.Size(171, 166);
+            this.pctCrossfit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pctCrossfit.TabIndex = 3;
+            this.pctCrossfit.TabStop = false;
+            // 
+            // bienvenidoToolStripMenuItem
+            // 
+            this.bienvenidoToolStripMenuItem.Name = "bienvenidoToolStripMenuItem";
+            this.bienvenidoToolStripMenuItem.Size = new System.Drawing.Size(81, 20);
+            this.bienvenidoToolStripMenuItem.Text = "Bienvenido!";
+            this.bienvenidoToolStripMenuItem.Click += new System.EventHandler(this.bienvenidoToolStripMenuItem_Click);
             // 
             // frmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(242, 100);
-            this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.ClientSize = new System.Drawing.Size(641, 477);
+            this.Controls.Add(this.pctCrossfit);
+            this.Controls.Add(this.pctFB);
+            this.Controls.Add(this.menuMain);
+            this.MainMenuStrip = this.menuMain;
             this.Name = "frmMenu";
             this.Text = "Menu";
             this.Load += new System.EventHandler(this.frmMenu_Load);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.menuMain.ResumeLayout(false);
+            this.menuMain.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pctFB)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctCrossfit)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -202,9 +235,8 @@
 
         #endregion
 
-        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.MenuStrip menuMain;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem clientesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mostrarListadosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listadoDeTodosLosClientesToolStripMenuItem;
@@ -219,5 +251,8 @@
         private System.Windows.Forms.ToolStripMenuItem eliminarClienteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem buscarSaldoClienteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem actualizarDeudaDeClienteToolStripMenuItem;
+        private System.Windows.Forms.PictureBox pctFB;
+        private System.Windows.Forms.PictureBox pctCrossfit;
+        private System.Windows.Forms.ToolStripMenuItem bienvenidoToolStripMenuItem;
     }
 }

@@ -269,5 +269,11 @@ namespace pryVonIEFILabLog
         {
 
         }
+
+        private void bienvenidoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Bienvenido a FB Entrenamiento, el mejor centro de entrenamiento en Córdoba. Nos encontramos en Barrio Jardín," +
+                "Barrio General Paz y Nueva Córdoba. Siganos en nuestro instagram para más información: @fbentrenamiento");
+        }
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmListaDatosClientes));
             this.grdClientes = new System.Windows.Forms.DataGridView();
             this.colDNI = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,7 +45,11 @@
             this.btnGenerar = new System.Windows.Forms.Button();
             this.prtVentana = new System.Windows.Forms.PrintDialog();
             this.prtDocument = new System.Drawing.Printing.PrintDocument();
+            this.pctCrossfit = new System.Windows.Forms.PictureBox();
+            this.pctFB = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.grdClientes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctCrossfit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctFB)).BeginInit();
             this.SuspendLayout();
             // 
             // grdClientes
@@ -58,7 +63,7 @@
             this.colBarrio,
             this.colSucursal,
             this.colActividad});
-            this.grdClientes.Location = new System.Drawing.Point(12, 12);
+            this.grdClientes.Location = new System.Drawing.Point(12, 107);
             this.grdClientes.Name = "grdClientes";
             this.grdClientes.Size = new System.Drawing.Size(648, 287);
             this.grdClientes.TabIndex = 0;
@@ -95,7 +100,7 @@
             // 
             // btnVolver
             // 
-            this.btnVolver.Location = new System.Drawing.Point(321, 328);
+            this.btnVolver.Location = new System.Drawing.Point(321, 423);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(84, 42);
             this.btnVolver.TabIndex = 36;
@@ -105,7 +110,7 @@
             // 
             // btnMostrar
             // 
-            this.btnMostrar.Location = new System.Drawing.Point(576, 328);
+            this.btnMostrar.Location = new System.Drawing.Point(576, 423);
             this.btnMostrar.Name = "btnMostrar";
             this.btnMostrar.Size = new System.Drawing.Size(84, 42);
             this.btnMostrar.TabIndex = 37;
@@ -115,7 +120,7 @@
             // 
             // btnBorrar
             // 
-            this.btnBorrar.Location = new System.Drawing.Point(449, 328);
+            this.btnBorrar.Location = new System.Drawing.Point(449, 423);
             this.btnBorrar.Name = "btnBorrar";
             this.btnBorrar.Size = new System.Drawing.Size(84, 42);
             this.btnBorrar.TabIndex = 38;
@@ -125,8 +130,9 @@
             // 
             // lblTotalClientesRes
             // 
+            this.lblTotalClientesRes.BackColor = System.Drawing.Color.White;
             this.lblTotalClientesRes.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblTotalClientesRes.Location = new System.Drawing.Point(21, 347);
+            this.lblTotalClientesRes.Location = new System.Drawing.Point(21, 442);
             this.lblTotalClientesRes.Name = "lblTotalClientesRes";
             this.lblTotalClientesRes.Size = new System.Drawing.Size(202, 23);
             this.lblTotalClientesRes.TabIndex = 39;
@@ -135,7 +141,8 @@
             // lblTotalClientes
             // 
             this.lblTotalClientes.AutoSize = true;
-            this.lblTotalClientes.Location = new System.Drawing.Point(76, 328);
+            this.lblTotalClientes.ForeColor = System.Drawing.Color.White;
+            this.lblTotalClientes.Location = new System.Drawing.Point(76, 423);
             this.lblTotalClientes.Name = "lblTotalClientes";
             this.lblTotalClientes.Size = new System.Drawing.Size(85, 13);
             this.lblTotalClientes.TabIndex = 40;
@@ -143,7 +150,7 @@
             // 
             // btnGenerar
             // 
-            this.btnGenerar.Location = new System.Drawing.Point(576, 398);
+            this.btnGenerar.Location = new System.Drawing.Point(576, 493);
             this.btnGenerar.Name = "btnGenerar";
             this.btnGenerar.Size = new System.Drawing.Size(86, 45);
             this.btnGenerar.TabIndex = 41;
@@ -159,11 +166,34 @@
             // 
             this.prtDocument.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.prtDocument_PrintPage);
             // 
+            // pctCrossfit
+            // 
+            this.pctCrossfit.Image = ((System.Drawing.Image)(resources.GetObject("pctCrossfit.Image")));
+            this.pctCrossfit.Location = new System.Drawing.Point(131, 12);
+            this.pctCrossfit.Name = "pctCrossfit";
+            this.pctCrossfit.Size = new System.Drawing.Size(92, 76);
+            this.pctCrossfit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pctCrossfit.TabIndex = 54;
+            this.pctCrossfit.TabStop = false;
+            // 
+            // pctFB
+            // 
+            this.pctFB.Image = ((System.Drawing.Image)(resources.GetObject("pctFB.Image")));
+            this.pctFB.Location = new System.Drawing.Point(11, 14);
+            this.pctFB.Name = "pctFB";
+            this.pctFB.Size = new System.Drawing.Size(95, 74);
+            this.pctFB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pctFB.TabIndex = 53;
+            this.pctFB.TabStop = false;
+            // 
             // frmListaDatosClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(684, 467);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.ClientSize = new System.Drawing.Size(704, 582);
+            this.Controls.Add(this.pctCrossfit);
+            this.Controls.Add(this.pctFB);
             this.Controls.Add(this.btnGenerar);
             this.Controls.Add(this.lblTotalClientes);
             this.Controls.Add(this.lblTotalClientesRes);
@@ -175,6 +205,8 @@
             this.Text = "Mostrar todos los clientes";
             this.Load += new System.EventHandler(this.frmListaClientes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grdClientes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctCrossfit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctFB)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -198,5 +230,7 @@
         private System.Windows.Forms.Button btnGenerar;
         private System.Windows.Forms.PrintDialog prtVentana;
         private System.Drawing.Printing.PrintDocument prtDocument;
+        private System.Windows.Forms.PictureBox pctCrossfit;
+        private System.Windows.Forms.PictureBox pctFB;
     }
 }
