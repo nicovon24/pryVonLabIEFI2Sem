@@ -264,5 +264,10 @@ namespace pryVonIEFILabLog
             frmEliminarCliente frmNew = new frmEliminarCliente();
             frmNew.Show();
         }
+
+        private void sistemaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
