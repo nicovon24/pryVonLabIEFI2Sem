@@ -6,6 +6,7 @@ using System.Data.Common;
 using System.Data.OleDb;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -132,26 +133,19 @@ namespace pryVonIEFILabLog
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
 
-        //txtNombre only accepts letters, does not other characters like # or nums
+        //only accepting letters, delete and space
         private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
         {
-            //NO ME TOMA EL ASCCI DE BORRAR (127)
-            //int ascci = Convert.ToInt32(Convert.ToChar(e.KeyChar));
-
-            //if ((ascci >= 65 && ascci <= 90) || (ascci >= 97 && ascci <= 122) || (ascci == 127))
-            //{
-            //    e.Handled = false;
-            //}
-
-            //else
-            //{
-            //    e.Handled = true;
-            //}
+            e.Handled = !(char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back || e.KeyChar == (char)Keys.Delete || e.KeyChar == (char)Keys.Space);
         }
 
         private void txtNombre_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtNombre_KeyDown(object sender, KeyEventArgs e)
+        {
         }
     }
 }

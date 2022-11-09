@@ -68,6 +68,7 @@
             this.lblMSG.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblMSG.Location = new System.Drawing.Point(12, 9);
             this.lblMSG.Name = "lblMSG";
+            this.lblMSG.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblMSG.Size = new System.Drawing.Size(222, 73);
             this.lblMSG.TabIndex = 63;
             this.lblMSG.Text = "Tipee el código de un cliente para actualizar su deuda, ejemplos de \r\nprueba: 444" +

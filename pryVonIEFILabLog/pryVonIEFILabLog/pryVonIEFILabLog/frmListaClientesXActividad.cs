@@ -20,13 +20,15 @@ namespace pryVonIEFILabLog
         {
             InitializeComponent();
             btnBorrar.Enabled = false;
+            btnGenerar.Enabled = false;
         }
 
         private void frmListaClientesCiudad_Load(object sender, EventArgs e)
         {
             frmMenu.functChangeCbValue("Actividades", "Detalle", cbActividad);
         }
-
+        //=============================================================================================================
+        //BUSCAR
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             if (cbActividad.Text!="")
@@ -57,7 +59,7 @@ namespace pryVonIEFILabLog
                     OleDbCommand comandoClientes = new OleDbCommand();
                     comandoClientes.Connection = conexionDB;
                     comandoClientes.CommandType = CommandType.TableDirect;
-                    comandoClientes.CommandText = "SELECT * FROM Clientes WHERE ID_actividad=" + id;
+                    comandoClientes.CommandText = "SELECT * FROM Clientes WHERE ID_actividad=" + id + " ORDER BY Dni";
                     OleDbDataReader readerClientes = comandoClientes.ExecuteReader();
 
                     //getting the clients which practice that activity
@@ -69,7 +71,9 @@ namespace pryVonIEFILabLog
                     readerClientes.Close();
                     conexionDB.Close();
 
+                    btnBuscar.Enabled = false;
                     btnBorrar.Enabled = true;
+                    btnGenerar.Enabled = true;
                 }
 
                 catch
@@ -87,6 +91,8 @@ namespace pryVonIEFILabLog
         {
             grdListaClientes.Rows.Clear();
             btnBorrar.Enabled = false;
+            cbActividad.Text = "";
+            btnGenerar.Enabled = false;
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
@@ -101,6 +107,9 @@ namespace pryVonIEFILabLog
 
         }
 
+        //=============================================================================================================
+        //REPORT
+        //generating a report 
         private void prtDocument_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
 
@@ -109,6 +118,7 @@ namespace pryVonIEFILabLog
             {
                 try
                 {
+                    //=================================================================================================
                     //seaching the activity id
                     int actividadID = 0;
 
@@ -119,16 +129,17 @@ namespace pryVonIEFILabLog
                     OleDbCommand comandoActividades = new OleDbCommand();
                     comandoActividades.Connection = conexionDB;
                     comandoActividades.CommandType = CommandType.TableDirect;
-                    comandoActividades.CommandText = "SELECT * FROM ACTIVIDADES WHERE Detalle='" + cbActividad.Text + "'";
+                    comandoActividades.CommandText = "SELECT * FROM Actividades WHERE Detalle='" + cbActividad.Text + "'";
                     OleDbDataReader readerActividades = comandoActividades.ExecuteReader();
 
                     while (readerActividades.Read())
                     {
                         actividadID = int.Parse(readerActividades["Cod_actividad"].ToString());
                     }
-
                     readerActividades.Close();
 
+                    //=================================================================================================
+                    //generating the report with the clients which do that activity
                     conexionDB = new OleDbConnection(frmMenu.urlDB);
                     conexionDB.Open();
 
@@ -136,7 +147,8 @@ namespace pryVonIEFILabLog
                     comandoClientes.Connection = conexionDB;
                     comandoClientes.CommandType = CommandType.TableDirect;
 
-                    comandoClientes.CommandText = "Clientes";
+                    //comandoClientes.CommandText = "Clientes";
+                    comandoClientes.CommandText = " SELECT * FROM Clientes WHERE ID_actividad=" + actividadID + " ORDER BY Dni";
                     OleDbDataReader readerClientes = comandoClientes.ExecuteReader();
 
                     Font font_title = new Font("Arial", 12, FontStyle.Underline); //font of the report
@@ -154,12 +166,9 @@ namespace pryVonIEFILabLog
                     //report table´s content
                     while (readerClientes.Read())
                     {
-                        if (int.Parse(readerClientes["ID_actividad"].ToString()) == actividadID)
-                        {
-                            e.Graphics.DrawString(readerClientes["DNI"].ToString(), font_normal, Brushes.Black, 50, y);
-                            e.Graphics.DrawString(readerClientes["Nombre y apellido"].ToString(), font_normal, Brushes.Black, 150, y);
-                            y += 15;
-                        }
+                        e.Graphics.DrawString(readerClientes["DNI"].ToString(), font_normal, Brushes.Black, 50, y);
+                        e.Graphics.DrawString(readerClientes["Nombre y apellido"].ToString(), font_normal, Brushes.Black, 150, y);
+                        y += 15;
                     }
                     readerClientes.Close();
                     conexionDB.Close();
@@ -178,7 +187,6 @@ namespace pryVonIEFILabLog
         //each time we presses this button, shows the print screen
         private void btnGenerar_Click(object sender, EventArgs e)
         {
-
             if (cbActividad.Text != "")
             {
                 //prtVentana: window that appear when we click on btnPrint
@@ -197,6 +205,12 @@ namespace pryVonIEFILabLog
 
         private void btnBuscar_MouseClick(object sender, MouseEventArgs e)
         {
+        }
+
+        //each time we select an option in the combo box, we enable the search and generate btns
+        private void cbActividad_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
