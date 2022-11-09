@@ -58,51 +58,31 @@ namespace pryVonIEFILabLog
                         int cod_actividad = frmMenu.functTransformStringToID("Actividades", "Cod_actividad", "Detalle", cbActividad.Text);
 
 
-                        //BORRAR LÍNEA 61 A 86
-                        ////sqlSentence for the program
-                        //string sqlTables = "DNI, [Nombre y apellido], Sexo, ID_barrio, ID_sucursal, ID_profesor, ID_actividad, Teléfono, Email, Deuda";
-                        //string sqlCommand = " " + txtDNI.Text + ", " +
-                        //"' " + txtNombre.Text + "', " +
-                        //"'" + cbSexo.Text + "', " +
-                        //cod_barrio + ", " +
-                        //cod_sucursal + ", " +
-                        //cod_profesor + ", " +
-                        //cod_actividad + ", " +
-                        //"'" + txtTel.Text + "'," +
-                        //"'" + txtEmail.Text + "'," +
-                        //nudDeuda.Text;
+                        //sqlSentence for the program
+                        string sqlTables = "DNI, [Nombre y apellido], Sexo, ID_barrio, ID_sucursal, ID_profesor, ID_actividad, Teléfono, Email, Deuda";
+                        string sqlCommand = " " + txtDNI.Text + ", " +
+                        "' " + txtNombre.Text + "', " +
+                        "'" + cbSexo.Text + "', " +
+                        cod_barrio + ", " +
+                        cod_sucursal + ", " +
+                        cod_profesor + ", " +
+                        cod_actividad + ", " +
+                        "'" + txtTel.Text + "'," +
+                        "'" + txtEmail.Text + "'," +
+                        nudDeuda.Text;
 
 
-                        ////data base connection and sending data to the access db
-                        //OleDbConnection dbConnection = new OleDbConnection(frmMenu.urlDB);
-                        //dbConnection.Open();
-                        //OleDbCommand comando = new OleDbCommand();
-                        //comando.Connection = dbConnection;
-                        //comando.CommandType = CommandType.Text;
-                        //comando.CommandText = "INSERT INTO Clientes (" + sqlTables + ") VALUES(" + sqlCommand + ")";
-                        //comando.ExecuteNonQuery();
-                        //MessageBox.Show("Dato cargado");
-                        //dbConnection.Close();
-
+                        //data base connection and sending data to the access db
                         OleDbConnection dbConnection = new OleDbConnection(frmMenu.urlDB);
                         dbConnection.Open();
-                        using (System.Data.OleDb.OleDbCommand commandAdd = new System.Data.OleDb.OleDbCommand(
-                        "INSERT INTO Clientes (DNI, [Nombre y apellido], Sexo, ID_barrio, ID_sucursal, ID_profesor, ID_actividad, Teléfono, Email, Deuda) " +
-                        " VALUES(@dni, '@nombre', '@sexo', @barrio, @sucursal, @profesor, @actividad, '@telefono', '@email', @deuda)", dbConnection))
-                        {
-                            commandAdd.Parameters.Add(new System.Data.OleDb.OleDbParameter("@dni", txtDNI.Text));
-                            commandAdd.Parameters.Add(new System.Data.OleDb.OleDbParameter("@nombre", txtNombre.Text));
-                            commandAdd.Parameters.Add(new System.Data.OleDb.OleDbParameter("@sexo", cbSexo.Text));
-                            commandAdd.Parameters.Add(new System.Data.OleDb.OleDbParameter("@barrio", cod_barrio));
-                            commandAdd.Parameters.Add(new System.Data.OleDb.OleDbParameter("@sucursal", cod_sucursal));
-                            commandAdd.Parameters.Add(new System.Data.OleDb.OleDbParameter("@profesor", cod_profesor));
-                            commandAdd.Parameters.Add(new System.Data.OleDb.OleDbParameter("@actividad", cod_actividad));
-                            commandAdd.Parameters.Add(new System.Data.OleDb.OleDbParameter("@telefono", txtTel.Text));
-                            commandAdd.Parameters.Add(new System.Data.OleDb.OleDbParameter("email", txtEmail.Text));
-                            commandAdd.Parameters.Add(new System.Data.OleDb.OleDbParameter("@deuda", nudDeuda.Text));
-                            commandAdd.ExecuteNonQuery();
-                        }
+                        OleDbCommand comando = new OleDbCommand();
+                        comando.Connection = dbConnection;
+                        comando.CommandType = CommandType.Text;
+                        comando.CommandText = "INSERT INTO Clientes (" + sqlTables + ") VALUES(" + sqlCommand + ")";
+                        comando.ExecuteNonQuery();
+                        MessageBox.Show("Dato cargado");
                         dbConnection.Close();
+
 
                         cbActividad.Text = "";
                         cbBarrio.Text = "";
@@ -155,7 +135,7 @@ namespace pryVonIEFILabLog
         //txtNombre only accepts letters, does not other characters like # or nums
         private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
         {
-            //NO ME DEJA BORRAR
+            //NO ME TOMA EL ASCCI DE BORRAR (127)
             //int ascci = Convert.ToInt32(Convert.ToChar(e.KeyChar));
 
             //if ((ascci >= 65 && ascci <= 90) || (ascci >= 97 && ascci <= 122) || (ascci == 127))
