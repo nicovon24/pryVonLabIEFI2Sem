@@ -254,7 +254,7 @@ namespace pryVonIEFILabLog
         private void actualizarDeudaDeClienteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
-            frmActualizarDeuda frmNew = new frmActualizarDeuda();
+            frmActualizarMain frmNew = new frmActualizarMain();
             frmNew.Show();
         }
 
@@ -272,8 +272,18 @@ namespace pryVonIEFILabLog
 
         private void bienvenidoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Bienvenido a FB Entrenamiento, el mejor centro de entrenamiento en Córdoba. Nos encontramos en Barrio Jardín," +
+            MessageBox.Show("Bienvenido a FB Entrenamiento, el mejor centro de entrenamiento en Córdoba. Nos encontramos en Barrio Jardín, " +
                 "Barrio General Paz y Nueva Córdoba. Siganos en nuestro instagram para más información: @fbentrenamiento");
+        }
+
+        private void linkLabel1_Click(object sender, EventArgs e)
+        {
+            // Change the color of the link text by setting LinkVisited
+            // to true.
+            lnkInsta.LinkVisited = true;
+            //Call the Process.Start method to open the default browser
+            //with a URL:
+            System.Diagnostics.Process.Start("https://www.instagram.com/fbentrenamiento/?hl=es");
         }
     }
 }

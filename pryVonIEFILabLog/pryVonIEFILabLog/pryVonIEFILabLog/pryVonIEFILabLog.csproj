@@ -46,11 +46,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmActualizarDeuda.cs">
+    <Compile Include="frmActualizar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmActualizarDeuda.Designer.cs">
-      <DependentUpon>frmActualizarDeuda.cs</DependentUpon>
+    <Compile Include="frmActualizar.Designer.cs">
+      <DependentUpon>frmActualizar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmActualizarMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmActualizarMain.Designer.cs">
+      <DependentUpon>frmActualizarMain.cs</DependentUpon>
     </Compile>
     <Compile Include="frmAgregarNuevo.cs">
       <SubType>Form</SubType>
@@ -102,8 +108,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmActualizarDeuda.resx">
-      <DependentUpon>frmActualizarDeuda.cs</DependentUpon>
+    <EmbeddedResource Include="frmActualizar.resx">
+      <DependentUpon>frmActualizar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmActualizarMain.resx">
+      <DependentUpon>frmActualizarMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmAgregarNuevo.resx">
       <DependentUpon>frmAgregarNuevo.cs</DependentUpon>

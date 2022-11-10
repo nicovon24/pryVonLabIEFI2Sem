@@ -62,7 +62,7 @@
             // 
             this.lblNombre.AutoSize = true;
             this.lblNombre.ForeColor = System.Drawing.Color.White;
-            this.lblNombre.Location = new System.Drawing.Point(21, 179);
+            this.lblNombre.Location = new System.Drawing.Point(21, 168);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(91, 13);
             this.lblNombre.TabIndex = 1;
@@ -72,7 +72,7 @@
             // 
             this.lblDNI.AutoSize = true;
             this.lblDNI.ForeColor = System.Drawing.Color.White;
-            this.lblDNI.Location = new System.Drawing.Point(22, 137);
+            this.lblDNI.Location = new System.Drawing.Point(22, 126);
             this.lblDNI.Name = "lblDNI";
             this.lblDNI.Size = new System.Drawing.Size(29, 13);
             this.lblDNI.TabIndex = 2;
@@ -80,7 +80,7 @@
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(138, 176);
+            this.txtNombre.Location = new System.Drawing.Point(138, 165);
             this.txtNombre.MaxLength = 30;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(120, 20);
@@ -91,7 +91,7 @@
             // 
             // nudDeuda
             // 
-            this.nudDeuda.Location = new System.Drawing.Point(140, 306);
+            this.nudDeuda.Location = new System.Drawing.Point(140, 255);
             this.nudDeuda.Maximum = new decimal(new int[] {
             400000,
             0,
@@ -104,7 +104,7 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(409, 313);
+            this.txtEmail.Location = new System.Drawing.Point(411, 298);
             this.txtEmail.MaxLength = 40;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(120, 20);
@@ -114,7 +114,7 @@
             // 
             this.lblBarrio.AutoSize = true;
             this.lblBarrio.ForeColor = System.Drawing.Color.White;
-            this.lblBarrio.Location = new System.Drawing.Point(23, 263);
+            this.lblBarrio.Location = new System.Drawing.Point(329, 126);
             this.lblBarrio.Name = "lblBarrio";
             this.lblBarrio.Size = new System.Drawing.Size(34, 13);
             this.lblBarrio.TabIndex = 18;
@@ -124,7 +124,7 @@
             // 
             this.lblSexo.AutoSize = true;
             this.lblSexo.ForeColor = System.Drawing.Color.White;
-            this.lblSexo.Location = new System.Drawing.Point(22, 224);
+            this.lblSexo.Location = new System.Drawing.Point(22, 213);
             this.lblSexo.Name = "lblSexo";
             this.lblSexo.Size = new System.Drawing.Size(31, 13);
             this.lblSexo.TabIndex = 17;
@@ -134,7 +134,7 @@
             // 
             this.lblTelefono.AutoSize = true;
             this.lblTelefono.ForeColor = System.Drawing.Color.White;
-            this.lblTelefono.Location = new System.Drawing.Point(326, 271);
+            this.lblTelefono.Location = new System.Drawing.Point(23, 300);
             this.lblTelefono.Name = "lblTelefono";
             this.lblTelefono.Size = new System.Drawing.Size(49, 13);
             this.lblTelefono.TabIndex = 24;
@@ -144,7 +144,7 @@
             // 
             this.lblDeuda.AutoSize = true;
             this.lblDeuda.ForeColor = System.Drawing.Color.White;
-            this.lblDeuda.Location = new System.Drawing.Point(23, 308);
+            this.lblDeuda.Location = new System.Drawing.Point(23, 257);
             this.lblDeuda.Name = "lblDeuda";
             this.lblDeuda.Size = new System.Drawing.Size(39, 13);
             this.lblDeuda.TabIndex = 23;
@@ -154,7 +154,7 @@
             // 
             this.lblEmail.AutoSize = true;
             this.lblEmail.ForeColor = System.Drawing.Color.White;
-            this.lblEmail.Location = new System.Drawing.Point(331, 316);
+            this.lblEmail.Location = new System.Drawing.Point(333, 301);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(32, 13);
             this.lblEmail.TabIndex = 26;
@@ -162,7 +162,7 @@
             // 
             // txtTel
             // 
-            this.txtTel.Location = new System.Drawing.Point(409, 265);
+            this.txtTel.Location = new System.Drawing.Point(138, 297);
             this.txtTel.MaxLength = 13;
             this.txtTel.Name = "txtTel";
             this.txtTel.Size = new System.Drawing.Size(120, 20);
@@ -171,7 +171,7 @@
             // 
             // txtDNI
             // 
-            this.txtDNI.Location = new System.Drawing.Point(140, 134);
+            this.txtDNI.Location = new System.Drawing.Point(140, 123);
             this.txtDNI.MaxLength = 8;
             this.txtDNI.Name = "txtDNI";
             this.txtDNI.Size = new System.Drawing.Size(120, 20);
@@ -185,7 +185,7 @@
             "M",
             "F",
             "NS"});
-            this.cbSexo.Location = new System.Drawing.Point(138, 221);
+            this.cbSexo.Location = new System.Drawing.Point(138, 210);
             this.cbSexo.Name = "cbSexo";
             this.cbSexo.Size = new System.Drawing.Size(121, 21);
             this.cbSexo.TabIndex = 29;
@@ -193,14 +193,14 @@
             // cbBarrio
             // 
             this.cbBarrio.FormattingEnabled = true;
-            this.cbBarrio.Location = new System.Drawing.Point(140, 263);
+            this.cbBarrio.Location = new System.Drawing.Point(408, 122);
             this.cbBarrio.Name = "cbBarrio";
             this.cbBarrio.Size = new System.Drawing.Size(121, 21);
             this.cbBarrio.TabIndex = 30;
             // 
             // btnAnadir
             // 
-            this.btnAnadir.Location = new System.Drawing.Point(443, 368);
+            this.btnAnadir.Location = new System.Drawing.Point(443, 346);
             this.btnAnadir.Name = "btnAnadir";
             this.btnAnadir.Size = new System.Drawing.Size(86, 45);
             this.btnAnadir.TabIndex = 34;
@@ -210,7 +210,7 @@
             // 
             // btnVolver
             // 
-            this.btnVolver.Location = new System.Drawing.Point(25, 368);
+            this.btnVolver.Location = new System.Drawing.Point(25, 346);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(91, 45);
             this.btnVolver.TabIndex = 35;
@@ -221,7 +221,7 @@
             // cbActividad
             // 
             this.cbActividad.FormattingEnabled = true;
-            this.cbActividad.Location = new System.Drawing.Point(408, 134);
+            this.cbActividad.Location = new System.Drawing.Point(408, 165);
             this.cbActividad.Name = "cbActividad";
             this.cbActividad.Size = new System.Drawing.Size(121, 21);
             this.cbActividad.TabIndex = 45;
@@ -230,7 +230,7 @@
             // 
             this.lblActividad.AutoSize = true;
             this.lblActividad.ForeColor = System.Drawing.Color.White;
-            this.lblActividad.Location = new System.Drawing.Point(326, 137);
+            this.lblActividad.Location = new System.Drawing.Point(326, 168);
             this.lblActividad.Name = "lblActividad";
             this.lblActividad.Size = new System.Drawing.Size(51, 13);
             this.lblActividad.TabIndex = 44;
@@ -239,7 +239,7 @@
             // cbSucursal
             // 
             this.cbSucursal.FormattingEnabled = true;
-            this.cbSucursal.Location = new System.Drawing.Point(408, 222);
+            this.cbSucursal.Location = new System.Drawing.Point(408, 253);
             this.cbSucursal.Name = "cbSucursal";
             this.cbSucursal.Size = new System.Drawing.Size(121, 21);
             this.cbSucursal.TabIndex = 49;
@@ -248,7 +248,7 @@
             // 
             this.lblSucursal.AutoSize = true;
             this.lblSucursal.ForeColor = System.Drawing.Color.White;
-            this.lblSucursal.Location = new System.Drawing.Point(326, 224);
+            this.lblSucursal.Location = new System.Drawing.Point(326, 255);
             this.lblSucursal.Name = "lblSucursal";
             this.lblSucursal.Size = new System.Drawing.Size(48, 13);
             this.lblSucursal.TabIndex = 48;
@@ -257,7 +257,7 @@
             // cbProfesor
             // 
             this.cbProfesor.FormattingEnabled = true;
-            this.cbProfesor.Location = new System.Drawing.Point(408, 178);
+            this.cbProfesor.Location = new System.Drawing.Point(408, 209);
             this.cbProfesor.Name = "cbProfesor";
             this.cbProfesor.Size = new System.Drawing.Size(121, 21);
             this.cbProfesor.TabIndex = 51;
@@ -266,7 +266,7 @@
             // 
             this.lblProfesor.AutoSize = true;
             this.lblProfesor.ForeColor = System.Drawing.Color.White;
-            this.lblProfesor.Location = new System.Drawing.Point(326, 181);
+            this.lblProfesor.Location = new System.Drawing.Point(326, 212);
             this.lblProfesor.Name = "lblProfesor";
             this.lblProfesor.Size = new System.Drawing.Size(46, 13);
             this.lblProfesor.TabIndex = 50;
@@ -297,7 +297,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(543, 439);
+            this.ClientSize = new System.Drawing.Size(543, 428);
             this.Controls.Add(this.pctCrossfit);
             this.Controls.Add(this.pctFB);
             this.Controls.Add(this.cbProfesor);
