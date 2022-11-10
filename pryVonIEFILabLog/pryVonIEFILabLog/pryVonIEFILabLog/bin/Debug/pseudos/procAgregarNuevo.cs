@@ -1,5 +1,6 @@
 inicio programa
     inicio procedimiento agregarNuevo
+        //=========================================================================
         //---variables---
         //numerica
         int dni = parseInt(txtDNI.text), deuda = parseInt(nudDeuda.text)
@@ -27,6 +28,7 @@ inicio programa
         fin si
         cerrar add.clientes
 
+        //=========================================================================
         //---programa---
         si(flagEstaCodEnClientes==false){
             //we check if all inputs data are completed
@@ -35,6 +37,7 @@ inicio programa
             {
                 si (email.Contains("@gmail.com") == true || email.Contains("@outlook.com")==true || email.Contains("@hotmail.com") == true)
                 {
+                    //================
                     //--abro y uso los demás archivos para buscar el id de barrio, sucursal, profesor y actividad
                     //barrios
                     abrir y leer add.barrios
@@ -44,6 +47,7 @@ inicio programa
                         fin si
                         leer add.barrios
                     fin mientras
+                    cerrar add.barrios
 
 
                     //sucursales
@@ -79,6 +83,8 @@ inicio programa
                     cerrar add.actividades
 
 
+                    //================
+                    //agregar
                     agregar en Clientes{
                         add.clientes.dni = dni,
                         add.clientes.nombre = nombre,

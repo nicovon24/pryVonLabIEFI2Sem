@@ -39,6 +39,7 @@
             this.btnVolver = new System.Windows.Forms.Button();
             this.pctCrossfit = new System.Windows.Forms.PictureBox();
             this.pctFB = new System.Windows.Forms.PictureBox();
+            this.directoryEntry1 = new System.DirectoryServices.DirectoryEntry();
             ((System.ComponentModel.ISupportInitialize)(this.grdData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctCrossfit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctFB)).BeginInit();
@@ -179,5 +180,6 @@
         private System.Windows.Forms.Button btnVolver;
         private System.Windows.Forms.PictureBox pctCrossfit;
         private System.Windows.Forms.PictureBox pctFB;
+        private System.DirectoryServices.DirectoryEntry directoryEntry1;
     }
 }
