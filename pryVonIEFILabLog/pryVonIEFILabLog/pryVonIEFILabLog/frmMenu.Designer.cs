@@ -160,13 +160,13 @@
             this.actualizarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.actualizarDeudaDeClienteToolStripMenuItem});
             this.actualizarToolStripMenuItem.Name = "actualizarToolStripMenuItem";
-            this.actualizarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.actualizarToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
             this.actualizarToolStripMenuItem.Text = "Actualizar";
             // 
             // actualizarDeudaDeClienteToolStripMenuItem
             // 
             this.actualizarDeudaDeClienteToolStripMenuItem.Name = "actualizarDeudaDeClienteToolStripMenuItem";
-            this.actualizarDeudaDeClienteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.actualizarDeudaDeClienteToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
             this.actualizarDeudaDeClienteToolStripMenuItem.Text = "Actualizar datos";
             this.actualizarDeudaDeClienteToolStripMenuItem.Click += new System.EventHandler(this.actualizarDeudaDeClienteToolStripMenuItem_Click);
             // 
@@ -195,7 +195,7 @@
             // pctFB
             // 
             this.pctFB.Image = ((System.Drawing.Image)(resources.GetObject("pctFB.Image")));
-            this.pctFB.Location = new System.Drawing.Point(112, 160);
+            this.pctFB.Location = new System.Drawing.Point(112, 133);
             this.pctFB.Name = "pctFB";
             this.pctFB.Size = new System.Drawing.Size(171, 166);
             this.pctFB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -205,7 +205,7 @@
             // pctCrossfit
             // 
             this.pctCrossfit.Image = ((System.Drawing.Image)(resources.GetObject("pctCrossfit.Image")));
-            this.pctCrossfit.Location = new System.Drawing.Point(382, 160);
+            this.pctCrossfit.Location = new System.Drawing.Point(382, 133);
             this.pctCrossfit.Name = "pctCrossfit";
             this.pctCrossfit.Size = new System.Drawing.Size(171, 166);
             this.pctCrossfit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -218,7 +218,7 @@
             this.lnkInsta.AutoSize = true;
             this.lnkInsta.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lnkInsta.LinkColor = System.Drawing.Color.Yellow;
-            this.lnkInsta.Location = new System.Drawing.Point(109, 374);
+            this.lnkInsta.Location = new System.Drawing.Point(109, 361);
             this.lnkInsta.Name = "lnkInsta";
             this.lnkInsta.Size = new System.Drawing.Size(121, 18);
             this.lnkInsta.TabIndex = 4;

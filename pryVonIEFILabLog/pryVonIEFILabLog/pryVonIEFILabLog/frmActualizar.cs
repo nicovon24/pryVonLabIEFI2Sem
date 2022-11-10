@@ -85,9 +85,10 @@ namespace pryVonIEFILabLog
             OleDbDataReader readerClientes = commandFlag.ExecuteReader();
             while (readerClientes.Read())
             {
+                //we have found the guy
                 if (int.Parse(readerClientes["DNI"].ToString()) == codigoCliente)
                 {
-                    //if the cb is enabled, we update the value, otherwise the client does not want to update it
+                    //if the cb is enabled, we update the value, otherwise the client does not want to update it and we keep the previous value 
                     flagDniIsInDB = true;
                     if (cbBarrio.Enabled == true) //if the cb is enabled..
                     {
