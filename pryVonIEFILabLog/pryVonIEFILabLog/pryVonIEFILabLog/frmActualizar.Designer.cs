@@ -59,8 +59,8 @@
             this.lblMSG.Name = "lblMSG";
             this.lblMSG.Size = new System.Drawing.Size(200, 42);
             this.lblMSG.TabIndex = 56;
-            this.lblMSG.Text = "Tipee el código de un cliente para actualizar su deuda, ejemplos de prueba: 5555," +
-    " 21332132";
+            this.lblMSG.Text = "Tipee el código de un cliente para actualizar su deuda, ejemplos de prueba: 11114" +
+    " o 11118";
             this.lblMSG.Click += new System.EventHandler(this.lblMSG_Click);
             // 
             // txtDeuda

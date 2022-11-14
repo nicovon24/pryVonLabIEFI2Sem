@@ -109,7 +109,6 @@ E:\Escritorio\pryVonLabIEFI2Sem\pryVonIEFILabLog\pryVonIEFILabLog\pryVonIEFILabL
 E:\Escritorio\pryVonLabIEFI2Sem\pryVonIEFILabLog\pryVonIEFILabLog\pryVonIEFILabLog\bin\Debug\pryVonIEFILabLog.pdb
 E:\Escritorio\pryVonLabIEFI2Sem\pryVonIEFILabLog\pryVonIEFILabLog\pryVonIEFILabLog\obj\Debug\pryVonIEFILabLog.csproj.AssemblyReference.cache
 E:\Escritorio\pryVonLabIEFI2Sem\pryVonIEFILabLog\pryVonIEFILabLog\pryVonIEFILabLog\obj\Debug\pryVonIEFILabLog.csproj.SuggestedBindingRedirects.cache
-E:\Escritorio\pryVonLabIEFI2Sem\pryVonIEFILabLog\pryVonIEFILabLog\pryVonIEFILabLog\obj\Debug\pryVonIEFILabLog.frmActualizarDeuda.resources
 E:\Escritorio\pryVonLabIEFI2Sem\pryVonIEFILabLog\pryVonIEFILabLog\pryVonIEFILabLog\obj\Debug\pryVonIEFILabLog.frmAgregarNuevo.resources
 E:\Escritorio\pryVonLabIEFI2Sem\pryVonIEFILabLog\pryVonIEFILabLog\pryVonIEFILabLog\obj\Debug\pryVonIEFILabLog.frmBuscarSaldoCliente.resources
 E:\Escritorio\pryVonLabIEFI2Sem\pryVonIEFILabLog\pryVonIEFILabLog\pryVonIEFILabLog\obj\Debug\pryVonIEFILabLog.frmConsultaDatosEstrategicos.resources
@@ -125,3 +124,5 @@ E:\Escritorio\pryVonLabIEFI2Sem\pryVonIEFILabLog\pryVonIEFILabLog\pryVonIEFILabL
 E:\Escritorio\pryVonLabIEFI2Sem\pryVonIEFILabLog\pryVonIEFILabLog\pryVonIEFILabLog\obj\Debug\pryVonIEFILabLog.pdb
 C:\Users\Nicolas\Desktop\pryVonLabIEFI2Sem\pryVonIEFILabLog\pryVonIEFILabLog\pryVonIEFILabLog\obj\Debug\pryVonIEFILabLog.frmActualizarMain.resources
 C:\Users\Nicolas\Desktop\pryVonLabIEFI2Sem\pryVonIEFILabLog\pryVonIEFILabLog\pryVonIEFILabLog\obj\Debug\pryVonIEFILabLog.frmActualizar.resources
+E:\Escritorio\pryVonLabIEFI2Sem\pryVonIEFILabLog\pryVonIEFILabLog\pryVonIEFILabLog\obj\Debug\pryVonIEFILabLog.frmActualizar.resources
+E:\Escritorio\pryVonLabIEFI2Sem\pryVonIEFILabLog\pryVonIEFILabLog\pryVonIEFILabLog\obj\Debug\pryVonIEFILabLog.frmActualizarMain.resources
