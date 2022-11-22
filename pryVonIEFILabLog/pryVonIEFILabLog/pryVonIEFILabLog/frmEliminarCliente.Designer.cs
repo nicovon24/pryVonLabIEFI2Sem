@@ -80,8 +80,8 @@
             this.lblMSG.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblMSG.Size = new System.Drawing.Size(222, 67);
             this.lblMSG.TabIndex = 63;
-            this.lblMSG.Text = "Tipee el código de un cliente para actualizar su deuda, ejemplos de \r\nprueba: 111" +
-    "14 o 11118";
+            this.lblMSG.Text = "Tipee el código de un cliente para actualizar su deuda, puede probar un número de" +
+    "l 10000 a 10019";
             // 
             // txtDNI
             // 

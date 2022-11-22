@@ -136,7 +136,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(86, 42);
             this.label1.TabIndex = 49;
-            this.label1.Text = "Ejemplos de \r\nprueba: 5555, 21332132";
+            this.label1.Text = "Pruebe un número de 10000 a 10019";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pctCrossfit

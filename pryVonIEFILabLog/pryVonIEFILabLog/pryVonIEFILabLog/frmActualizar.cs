@@ -70,110 +70,124 @@ namespace pryVonIEFILabLog
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            int codigoCliente = int.Parse(txtDNI.Text);
-            bool flagDniIsInDB = false;
-
-            OleDbConnection conexionDB;
-            conexionDB = new OleDbConnection(frmMenu.urlDB);
-            conexionDB.Open();
-
-            //checking if the person is in the db, if he is we can update his data
-            OleDbCommand commandFlag = new OleDbCommand();
-            commandFlag.Connection = conexionDB;
-            commandFlag.CommandType = CommandType.TableDirect;
-            commandFlag.CommandText = "SELECT * FROM Clientes";
-            OleDbDataReader readerClientes = commandFlag.ExecuteReader();
-            while (readerClientes.Read())
+            if (txtDNI.Text != "")
             {
-                //we have found the guy
-                if (int.Parse(readerClientes["DNI"].ToString()) == codigoCliente)
+
+                try
                 {
-                    //if the cb is enabled, we update the value, otherwise the client does not want to update it and we keep the previous value 
-                    flagDniIsInDB = true;
-                    if (cbBarrio.Enabled == true) //if the cb is enabled..
+                    int codigoCliente = int.Parse(txtDNI.Text);
+                    bool flagDniIsInDB = false;
+
+                    OleDbConnection conexionDB;
+                    conexionDB = new OleDbConnection(frmMenu.urlDB);
+                    conexionDB.Open();
+
+                    //checking if the person is in the db, if he is we can update his data
+                    OleDbCommand commandFlag = new OleDbCommand();
+                    commandFlag.Connection = conexionDB;
+                    commandFlag.CommandType = CommandType.TableDirect;
+                    commandFlag.CommandText = "SELECT * FROM Clientes";
+                    OleDbDataReader readerClientes = commandFlag.ExecuteReader();
+                    while (readerClientes.Read())
                     {
-                        idBarrio = frmMenu.functTransformStringToID("Barrios", "Cod_barrio", "Detalle", cbBarrio.Text); //getting the new value
+                        //we have found the guy
+                        if (int.Parse(readerClientes["DNI"].ToString()) == codigoCliente)
+                        {
+                            //if the cb is enabled, we update the value, otherwise the client does not want to update it and we keep the previous value 
+                            flagDniIsInDB = true;
+                            if (cbBarrio.Enabled == true) //if the cb is enabled..
+                            {
+                                idBarrio = frmMenu.functTransformStringToID("Barrios", "Cod_barrio", "Detalle", cbBarrio.Text); //getting the new value
+                            }
+                            else
+                            {
+                                idBarrio = int.Parse(readerClientes["ID_barrio"].ToString()); //otherwise, the value is the same
+                            }
+
+
+                            if (cbActividad.Enabled == true) //if the cb is enabled..
+                            {
+                                idActividad = frmMenu.functTransformStringToID("Actividades", "Cod_actividad", "Detalle", cbActividad.Text);
+                            }
+                            else
+                            {
+                                idActividad = int.Parse(readerClientes["ID_actividad"].ToString());
+                            }
+
+
+                            if (cbSucursal.Enabled == true) //if the cb is enabled..
+                            {
+                                idSucursal = frmMenu.functTransformStringToID("Sucursales", "Cod_sucursal", "Detalle", cbSucursal.Text);
+                            }
+                            else
+                            {
+                                idSucursal = int.Parse(readerClientes["ID_sucursal"].ToString());
+                            }
+
+
+                            if (cbProfesor.Enabled == true) //if the cb is enabled..
+                            {
+                                idProfesor = frmMenu.functTransformStringToID("Profesores", "Cod_profesor", "Nombre", cbProfesor.Text);
+                            }
+                            else
+                            {
+                                idProfesor = int.Parse(readerClientes["ID_profesor"].ToString());
+                            }
+
+                            if (txtDeuda.Text != "")
+                            {
+                                deuda = int.Parse(txtDeuda.Text); //si no está habilitado el txtDeuda, dejamos el valor tal cual estaba
+                            }
+                            else
+                            {
+                                deuda = int.Parse(readerClientes["DNI"].ToString());
+                            }
+                        }
+                    }
+                    readerClientes.Close();
+                    //only if he/she is in the db, we can update his debt
+                    if (flagDniIsInDB == true)
+                    {
+                        //I found this in internet, bcs i couldn't make it work out the other way
+                        //defines the query, the conection and the parameters in the command
+                        //HACER LA CARGA DE LOS PARAMETROS EN ORDEN, NO LOS LEE SINO
+                        using (System.Data.OleDb.OleDbCommand commandUpdate = new System.Data.OleDb.OleDbCommand(
+                            "UPDATE Clientes SET [Deuda]=@deuda,[ID_barrio]=@barrio, [ID_actividad]=@actividad, [ID_sucursal]=@sucursal, [ID_profesor]=@profesor" +
+                            " WHERE DNI=@dni", conexionDB))
+                        {
+                            commandUpdate.Parameters.Add(new System.Data.OleDb.OleDbParameter("@deuda", deuda));
+                            commandUpdate.Parameters.Add(new System.Data.OleDb.OleDbParameter("@barrio", idBarrio));
+                            commandUpdate.Parameters.Add(new System.Data.OleDb.OleDbParameter("@actividad", idActividad));
+                            commandUpdate.Parameters.Add(new System.Data.OleDb.OleDbParameter("@sucursal", idSucursal));
+                            commandUpdate.Parameters.Add(new System.Data.OleDb.OleDbParameter("@profesor", idProfesor));
+                            commandUpdate.Parameters.Add(new System.Data.OleDb.OleDbParameter("@dni", codigoCliente));
+                            commandUpdate.ExecuteNonQuery();
+                        }
+                        conexionDB.Close();
+
+
+                        txtDNI.Text = "";
+                        txtDeuda.Text = "";
+                        cbActividad.Text = "";
+                        cbBarrio.Text = "";
+                        cbProfesor.Text = "";
+                        cbSucursal.Text = "";
+                        txtDNI.Focus();
+                        MessageBox.Show("Dato actualizado");
                     }
                     else
                     {
-                        idBarrio = int.Parse(readerClientes["ID_barrio"].ToString()); //otherwise, the value is the same
-                    }
-
-
-                    if (cbActividad.Enabled == true) //if the cb is enabled..
-                    {
-                        idActividad = frmMenu.functTransformStringToID("Actividades", "Cod_actividad", "Detalle", cbActividad.Text);
-                    }
-                    else
-                    {
-                        idActividad = int.Parse(readerClientes["ID_actividad"].ToString());
-                    }
-
-
-                    if (cbSucursal.Enabled == true) //if the cb is enabled..
-                    {
-                        idSucursal = frmMenu.functTransformStringToID("Sucursales", "Cod_sucursal", "Detalle", cbSucursal.Text);
-                    }
-                    else
-                    {
-                        idSucursal = int.Parse(readerClientes["ID_sucursal"].ToString());
-                    }
-
-
-                    if (cbProfesor.Enabled == true) //if the cb is enabled..
-                    {
-                        idProfesor = frmMenu.functTransformStringToID("Profesores", "Cod_profesor", "Nombre", cbProfesor.Text);
-                    }
-                    else
-                    {
-                        idProfesor = int.Parse(readerClientes["ID_profesor"].ToString());
-                    }
-
-                    if (txtDeuda.Text != "")
-                    {
-                        deuda = int.Parse(txtDeuda.Text); //si no está habilitado el txtDeuda, dejamos el valor tal cual estaba
-                    }
-                    else
-                    {
-                        deuda = int.Parse(readerClientes["DNI"].ToString());
+                        MessageBox.Show("La persona no se encuentra en la base de datos");
                     }
                 }
-            }
-            readerClientes.Close();
-
-            //only if he/she is in the db, we can update his debt
-            if (flagDniIsInDB == true)
-            {
-                //I found this in internet, bcs i couldn't make it work out the other way
-                //defines the query, the conection and the parameters in the command
-                //HACER LA CARGA DE LOS PARAMETROS EN ORDEN, NO LOS LEE SINO
-                using (System.Data.OleDb.OleDbCommand commandUpdate = new System.Data.OleDb.OleDbCommand(
-                    "UPDATE Clientes SET [Deuda]=@deuda,[ID_barrio]=@barrio, [ID_actividad]=@actividad, [ID_sucursal]=@sucursal, [ID_profesor]=@profesor" +
-                    " WHERE DNI=@dni", conexionDB))
+                catch(Exception err)
                 {
-                    commandUpdate.Parameters.Add(new System.Data.OleDb.OleDbParameter("@deuda", deuda));
-                    commandUpdate.Parameters.Add(new System.Data.OleDb.OleDbParameter("@barrio", idBarrio));
-                    commandUpdate.Parameters.Add(new System.Data.OleDb.OleDbParameter("@actividad", idActividad));
-                    commandUpdate.Parameters.Add(new System.Data.OleDb.OleDbParameter("@sucursal", idSucursal));
-                    commandUpdate.Parameters.Add(new System.Data.OleDb.OleDbParameter("@profesor", idProfesor));
-                    commandUpdate.Parameters.Add(new System.Data.OleDb.OleDbParameter("@dni", codigoCliente));
-                    commandUpdate.ExecuteNonQuery();
+                    MessageBox.Show("Error en la actualización de datos, probablemente no haya completado todos los datos del formulario");
                 }
-                conexionDB.Close();
-
-
-                txtDNI.Text = "";
-                txtDeuda.Text = "";
-                cbActividad.Text = "";
-                cbBarrio.Text = "";
-                cbProfesor.Text = "";
-                cbSucursal.Text = "";
-                txtDNI.Focus();
-                MessageBox.Show("Dato actualizado");
             }
             else
             {
-                MessageBox.Show("La persona no se encuentra en la base de datos");
+                MessageBox.Show("Ingrese un DNI, por favor");
             }
         }
 
