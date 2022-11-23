@@ -66,6 +66,7 @@ namespace pryVonIEFILabLog
 
                     conexionDB.Close();
                     MessageBox.Show(" Cliente eliminado");
+                    txtDNI.Text = "";
                 }
                 else
                 {

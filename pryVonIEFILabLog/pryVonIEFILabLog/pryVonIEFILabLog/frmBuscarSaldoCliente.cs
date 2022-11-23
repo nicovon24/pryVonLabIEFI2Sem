@@ -36,7 +36,7 @@ namespace pryVonIEFILabLog
 
         private void btnMostrar_Click(object sender, EventArgs e)
         {
-            lblDeudaRes.Text = "No se ha encontrado al sujeto"; //will be executed always, if the user is not found, this msg will be shown
+            lblNombreRes.Text = "No se ha encontrado al sujeto"; //will be executed always, if the user is not found, this msg will be shown
 
             if (txtDNI.Text != "")
             {
@@ -57,9 +57,12 @@ namespace pryVonIEFILabLog
                     while (readerCliente.Read())
                     {
                         lblDeudaRes.Text = "$" + readerCliente["Deuda"].ToString();
+                        lblNombreRes.Text = readerCliente["Nombre y apellido"].ToString();
                     }
                     conexionDB.Close();
                     readerCliente.Close();
+
+                    txtDNI.Text = "";
                 }
 
                 catch
@@ -75,7 +78,9 @@ namespace pryVonIEFILabLog
 
         private void btnBorrar_Click(object sender, EventArgs e)
         {
-            lblDeudaRes.Text = "Datos borrados";
+            lblNombreRes.Text   = "";
+            lblDeudaRes.Text = "";
+            txtDNI.Text = "";
         }
 
         private void txtDNI_TextChanged(object sender, EventArgs e)
